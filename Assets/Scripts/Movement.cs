@@ -85,6 +85,7 @@ public class Movement : MonoBehaviour
         {
             if (isGrounded != false)
             {
+              animator.SetBool("isJumping", true);
               isGrounded = false;
               rb.AddForce(Vector3.up * jumpforce);
               Debug.Log("Key Space has been pressed");
@@ -103,6 +104,7 @@ public class Movement : MonoBehaviour
         {
             if (isGrounded != false)
             {
+              animator.SetBool("isJumping", true);
               isGrounded = false;
               rb.AddForce(Vector3.up * jumpforce);
               Debug.Log("Key Up Arrow has been pressed");
