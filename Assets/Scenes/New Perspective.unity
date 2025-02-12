@@ -5769,7 +5769,7 @@ MonoBehaviour:
   m_HasRenderer: 1
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
-  m_SelfShadows: 1
+  m_SelfShadows: 0
   m_ApplyToSortingLayers: 4b0705c400000000
   m_ShapePath:
   - {x: -20.760008, y: -1.6200001, z: 0}
@@ -8153,7 +8153,7 @@ MonoBehaviour:
   m_HasRenderer: 1
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
-  m_SelfShadows: 1
+  m_SelfShadows: 0
   m_ApplyToSortingLayers: 4b0705c400000000
   m_ShapePath:
   - {x: -20.760008, y: -1.6200001, z: 0}
@@ -9386,8 +9386,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.120700836, y: 1.74965, z: 0}
-    m_Extent: {x: 33.5654, y: 16.551651, z: 0}
+    m_Center: {x: 0.12580109, y: 1.7526498, z: 0}
+    m_Extent: {x: 33.5584, y: 16.55645, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -12760,7 +12760,7 @@ MonoBehaviour:
   m_HasRenderer: 1
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
-  m_SelfShadows: 1
+  m_SelfShadows: 0
   m_ApplyToSortingLayers: 4b0705c400000000
   m_ShapePath:
   - {x: -20.760008, y: -1.6200001, z: 0}
@@ -13253,7 +13253,7 @@ MonoBehaviour:
   m_HasRenderer: 1
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
-  m_SelfShadows: 1
+  m_SelfShadows: 0
   m_ApplyToSortingLayers: 4b0705c400000000
   m_ShapePath:
   - {x: -20.760008, y: -1.6200001, z: 0}
@@ -18885,8 +18885,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.118450165, y: 1.7426, z: 0}
-    m_Extent: {x: 33.55725, y: 16.5513, z: 0}
+    m_Center: {x: 0.116298676, y: 1.7455001, z: 0}
+    m_Extent: {x: 33.5616, y: 16.5539, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -20456,7 +20456,7 @@ MonoBehaviour:
   m_HasRenderer: 1
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
-  m_SelfShadows: 1
+  m_SelfShadows: 0
   m_ApplyToSortingLayers: 4b0705c400000000
   m_ShapePath:
   - {x: -20.760008, y: -1.6200001, z: 0}
@@ -20621,8 +20621,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.123500824, y: 1.7470498, z: 0}
-    m_Extent: {x: 33.5597, y: 16.55015, z: 0}
+    m_Center: {x: 0.119550705, y: 1.7411003, z: 0}
+    m_Extent: {x: 33.550247, y: 16.5499, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -21752,8 +21752,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.116399765, y: 1.7519002, z: 0}
-    m_Extent: {x: 33.5549, y: 16.549301, z: 0}
+    m_Center: {x: 0.11234856, y: 1.7476001, z: 0}
+    m_Extent: {x: 33.56035, y: 16.5493, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -22188,8 +22188,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.113550186, y: 1.7525501, z: 0}
-    m_Extent: {x: 33.557953, y: 16.55295, z: 0}
+    m_Center: {x: 0.115449905, y: 1.7522006, z: 0}
+    m_Extent: {x: 33.565453, y: 16.5574, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -26355,8 +26355,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.11779976, y: 1.7578502, z: 0}
-    m_Extent: {x: 33.5655, y: 16.54975, z: 0}
+    m_Center: {x: 0.119501114, y: 1.7507005, z: 0}
+    m_Extent: {x: 33.552498, y: 16.5496, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -30517,7 +30517,7 @@ MonoBehaviour:
   m_HasRenderer: 1
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
-  m_SelfShadows: 1
+  m_SelfShadows: 0
   m_ApplyToSortingLayers: 4b0705c400000000
   m_ShapePath:
   - {x: -20.760008, y: -1.6200001, z: 0}
@@ -32283,8 +32283,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.11809921, y: 1.7525501, z: 0}
-    m_Extent: {x: 33.5654, y: 16.55245, z: 0}
+    m_Center: {x: 0.111349106, y: 1.7556505, z: 0}
+    m_Extent: {x: 33.55945, y: 16.547451, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -32801,8 +32801,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.1243, y: 1.7494998, z: 0}
-    m_Extent: {x: 33.557503, y: 16.5516, z: 0}
+    m_Center: {x: 0.118600845, y: 1.7463002, z: 0}
+    m_Extent: {x: 33.564102, y: 16.547201, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -33859,7 +33859,7 @@ MonoBehaviour:
   m_HasRenderer: 1
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
-  m_SelfShadows: 1
+  m_SelfShadows: 0
   m_ApplyToSortingLayers: 4b0705c400000000
   m_ShapePath:
   - {x: -20.760008, y: -1.6200001, z: 0}
@@ -33940,8 +33940,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.120550156, y: 1.7537994, z: 0}
-    m_Extent: {x: 33.55375, y: 16.5553, z: 0}
+    m_Center: {x: 0.120248795, y: 1.7472501, z: 0}
+    m_Extent: {x: 33.56595, y: 16.55385, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -34239,7 +34239,7 @@ MonoBehaviour:
   m_HasRenderer: 1
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
-  m_SelfShadows: 1
+  m_SelfShadows: 0
   m_ApplyToSortingLayers: 4b0705c400000000
   m_ShapePath:
   - {x: -20.760008, y: -1.6200001, z: 0}
@@ -34983,7 +34983,7 @@ MonoBehaviour:
   m_HasRenderer: 1
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
-  m_SelfShadows: 1
+  m_SelfShadows: 0
   m_ApplyToSortingLayers: 4b0705c400000000
   m_ShapePath:
   - {x: -20.760008, y: -1.6200001, z: 0}
@@ -36143,8 +36143,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 5.4502487, y: -2.1409492, z: 0}
-    m_Extent: {x: 93.95105, y: 51.53555, z: 0}
+    m_Center: {x: 5.4490967, y: -2.1360493, z: 0}
+    m_Extent: {x: 93.9534, y: 51.53475, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -37042,7 +37042,7 @@ MonoBehaviour:
   m_HasRenderer: 1
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
-  m_SelfShadows: 1
+  m_SelfShadows: 0
   m_ApplyToSortingLayers: 4b0705c400000000
   m_ShapePath:
   - {x: -20.760008, y: -1.6200001, z: 0}
@@ -37485,7 +37485,7 @@ MonoBehaviour:
   m_HasRenderer: 1
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
-  m_SelfShadows: 1
+  m_SelfShadows: 0
   m_ApplyToSortingLayers: 4b0705c400000000
   m_ShapePath:
   - {x: -20.760008, y: -1.6200001, z: 0}
@@ -37843,7 +37843,7 @@ MonoBehaviour:
   m_HasRenderer: 1
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
-  m_SelfShadows: 1
+  m_SelfShadows: 0
   m_ApplyToSortingLayers: 4b0705c400000000
   m_ShapePath:
   - {x: -20.760008, y: -1.6200001, z: 0}
@@ -39221,7 +39221,7 @@ MonoBehaviour:
   m_HasRenderer: 1
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
-  m_SelfShadows: 1
+  m_SelfShadows: 0
   m_ApplyToSortingLayers: 4b0705c400000000
   m_ShapePath:
   - {x: -20.760008, y: -1.6200001, z: 0}
@@ -40509,8 +40509,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.11164856, y: 1.7477002, z: 0}
-    m_Extent: {x: 33.55925, y: 16.547201, z: 0}
+    m_Center: {x: 0.113199234, y: 1.7548499, z: 0}
+    m_Extent: {x: 33.558403, y: 16.54765, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -41595,7 +41595,7 @@ MonoBehaviour:
   m_HasRenderer: 1
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
-  m_SelfShadows: 1
+  m_SelfShadows: 0
   m_ApplyToSortingLayers: 4b0705c400000000
   m_ShapePath:
   - {x: -20.760008, y: -1.6200001, z: 0}
@@ -43254,7 +43254,7 @@ MonoBehaviour:
   m_HasRenderer: 1
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
-  m_SelfShadows: 1
+  m_SelfShadows: 0
   m_ApplyToSortingLayers: 4b0705c400000000
   m_ShapePath:
   - {x: -20.760008, y: -1.6200001, z: 0}
@@ -44057,7 +44057,7 @@ MonoBehaviour:
   m_HasRenderer: 1
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
-  m_SelfShadows: 1
+  m_SelfShadows: 0
   m_ApplyToSortingLayers: 4b0705c400000000
   m_ShapePath:
   - {x: -20.760008, y: -1.6200001, z: 0}
@@ -45711,7 +45711,7 @@ MonoBehaviour:
   m_HasRenderer: 1
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
-  m_SelfShadows: 1
+  m_SelfShadows: 0
   m_ApplyToSortingLayers: 4b0705c400000000
   m_ShapePath:
   - {x: -20.760008, y: -1.6200001, z: 0}
@@ -47401,8 +47401,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.121450424, y: 1.7532997, z: 0}
-    m_Extent: {x: 33.559853, y: 16.5541, z: 0}
+    m_Center: {x: 0.116249084, y: 1.7556, z: 0}
+    m_Extent: {x: 33.56345, y: 16.5473, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -48475,7 +48475,7 @@ MonoBehaviour:
   m_HasRenderer: 1
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
-  m_SelfShadows: 1
+  m_SelfShadows: 0
   m_ApplyToSortingLayers: 4b0705c400000000
   m_ShapePath:
   - {x: -20.760008, y: -1.6200001, z: 0}
@@ -49463,7 +49463,7 @@ MonoBehaviour:
   m_HasRenderer: 1
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
-  m_SelfShadows: 1
+  m_SelfShadows: 0
   m_ApplyToSortingLayers: 4b0705c400000000
   m_ShapePath:
   - {x: -20.760008, y: -1.6200001, z: 0}
@@ -50234,7 +50234,7 @@ MonoBehaviour:
   m_HasRenderer: 1
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
-  m_SelfShadows: 1
+  m_SelfShadows: 0
   m_ApplyToSortingLayers: 4b0705c400000000
   m_ShapePath:
   - {x: -20.760008, y: -1.6200001, z: 0}
@@ -51826,7 +51826,7 @@ MonoBehaviour:
   m_HasRenderer: 1
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
-  m_SelfShadows: 1
+  m_SelfShadows: 0
   m_ApplyToSortingLayers: 4b0705c400000000
   m_ShapePath:
   - {x: -20.760008, y: -1.6200001, z: 0}
@@ -54031,7 +54031,7 @@ MonoBehaviour:
   m_HasRenderer: 1
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
-  m_SelfShadows: 1
+  m_SelfShadows: 0
   m_ApplyToSortingLayers: 4b0705c400000000
   m_ShapePath:
   - {x: -20.760008, y: -1.6200001, z: 0}
@@ -54196,8 +54196,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.120349884, y: 1.7530999, z: 0}
-    m_Extent: {x: 33.56315, y: 16.5519, z: 0}
+    m_Center: {x: 0.120349884, y: 1.7536006, z: 0}
+    m_Extent: {x: 33.55615, y: 16.556, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -57328,8 +57328,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.11785126, y: 1.7511497, z: 0}
-    m_Extent: {x: 33.55325, y: 16.55585, z: 0}
+    m_Center: {x: 0.11985016, y: 1.7458, z: 0}
+    m_Extent: {x: 33.56495, y: 16.5443, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -60492,7 +60492,7 @@ MonoBehaviour:
   m_HasRenderer: 1
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
-  m_SelfShadows: 1
+  m_SelfShadows: 0
   m_ApplyToSortingLayers: 4b0705c400000000
   m_ShapePath:
   - {x: -20.760008, y: -1.6200001, z: 0}
@@ -60850,7 +60850,7 @@ MonoBehaviour:
   m_HasRenderer: 1
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
-  m_SelfShadows: 1
+  m_SelfShadows: 0
   m_ApplyToSortingLayers: 4b0705c400000000
   m_ShapePath:
   - {x: -20.760008, y: -1.6200001, z: 0}
@@ -62608,7 +62608,7 @@ MonoBehaviour:
   m_HasRenderer: 1
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
-  m_SelfShadows: 1
+  m_SelfShadows: 0
   m_ApplyToSortingLayers: 4b0705c400000000
   m_ShapePath:
   - {x: -20.760008, y: -1.6200001, z: 0}
@@ -64811,7 +64811,7 @@ MonoBehaviour:
   m_HasRenderer: 1
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
-  m_SelfShadows: 1
+  m_SelfShadows: 0
   m_ApplyToSortingLayers: 4b0705c400000000
   m_ShapePath:
   - {x: -20.760008, y: -1.6200001, z: 0}
@@ -66573,7 +66573,7 @@ MonoBehaviour:
   m_HasRenderer: 1
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
-  m_SelfShadows: 1
+  m_SelfShadows: 0
   m_ApplyToSortingLayers: 4b0705c400000000
   m_ShapePath:
   - {x: -20.760008, y: -1.6200001, z: 0}
@@ -67428,7 +67428,7 @@ MonoBehaviour:
   m_HasRenderer: 1
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
-  m_SelfShadows: 1
+  m_SelfShadows: 0
   m_ApplyToSortingLayers: 4b0705c400000000
   m_ShapePath:
   - {x: -20.760008, y: -1.6200001, z: 0}
@@ -69247,7 +69247,7 @@ MonoBehaviour:
   m_HasRenderer: 1
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
-  m_SelfShadows: 1
+  m_SelfShadows: 0
   m_ApplyToSortingLayers: 4b0705c400000000
   m_ShapePath:
   - {x: -20.760008, y: -1.6200001, z: 0}
@@ -70232,8 +70232,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.113651276, y: 1.7540002, z: 0}
-    m_Extent: {x: 33.55835, y: 16.551, z: 0}
+    m_Center: {x: 0.12045097, y: 1.7514505, z: 0}
+    m_Extent: {x: 33.56095, y: 16.54345, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -70696,7 +70696,7 @@ MonoBehaviour:
   m_HasRenderer: 1
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
-  m_SelfShadows: 1
+  m_SelfShadows: 0
   m_ApplyToSortingLayers: 4b0705c400000000
   m_ShapePath:
   - {x: -20.760008, y: -1.6200001, z: 0}
@@ -71312,7 +71312,7 @@ MonoBehaviour:
   m_HasRenderer: 1
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
-  m_SelfShadows: 1
+  m_SelfShadows: 0
   m_ApplyToSortingLayers: 4b0705c400000000
   m_ShapePath:
   - {x: -20.760008, y: -1.6200001, z: 0}
@@ -75147,7 +75147,7 @@ PrefabInstance:
       objectReference: {fileID: 207326032}
     - target: {fileID: 8057198486388022858, guid: 293438f727f0748308459ff9ef01ec45, type: 3}
       propertyPath: easy
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8057198486388022858, guid: 293438f727f0748308459ff9ef01ec45, type: 3}
       propertyPath: hard
@@ -75159,7 +75159,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8057198486388022858, guid: 293438f727f0748308459ff9ef01ec45, type: 3}
       propertyPath: medium
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8435964297230680591, guid: 293438f727f0748308459ff9ef01ec45, type: 3}
       propertyPath: pointerspawnpoints.Array.data[0]
