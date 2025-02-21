@@ -10,6 +10,7 @@ TagManager:
   - Platformgenerator
   - point
   - pointerspwan1
+  - Play
   layers:
   - Default
   - TransparentFX
