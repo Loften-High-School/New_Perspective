@@ -5,25 +5,21 @@ using UnityEngine;
 public class menu : MonoBehaviour
 {
 [SerializeField] public GameObject button;
-
+    public Camera MainCamera;
+    private Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
-        //m_Camera = Camera.Main;
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        /*Mouse mouse = Mouse.current;
-       if (mouse.leftButton.wasPressedThisFrame)
-       {
-           Vector3 mousePosition = mouse.position.ReadValue();
-           Ray ray = m_Camera.ScreenPointToRay(mousePosition);
-           if (Physics.Raycast(ray, out RaycastHit hit))
-           {
-               // Use the hit variable to determine what was clicked on.
-           }
-       }*/
+        Vector3 mousePos = Input.mousePosition;
+        if(Input.GetMouseButtonDown(0))
+        {
+            Debug.Log(mousePos.x);
+            Debug.Log(mousePos.y);
+        }
     }
 }
