@@ -8,7 +8,7 @@ public class Movement : MonoBehaviour
     public GameOver gameOver;
     public float maxSpeed;
     public float force;
-    [SerializeField] Difficulty difficulty;
+    public Difficulty difficulty;
   //Jumpforce variable
   [SerializeField] int jumpforce;
 
@@ -58,7 +58,8 @@ public class Movement : MonoBehaviour
         }
       }
 
-
+    if(difficulty.easy == true|difficulty.medium == true|difficulty.hard == true|difficulty.insane == true)
+    {
       if (gameOver.isAlive == true)
      { 
       if (Input.GetKeyDown(KeyCode.D))
@@ -124,6 +125,7 @@ public class Movement : MonoBehaviour
         }
      }
     }
+  }
       //Checks if player colides with ground
       private void OnCollisionEnter2D(Collision2D collider)
       {

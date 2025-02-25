@@ -10,8 +10,8 @@ public class GameOver : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        isAlive = true;
-        Debug.Log ("You are ok :D");
+            isAlive = true;
+            Debug.Log ("You are ok :D");
     }
 
     // Update is called once per frame
