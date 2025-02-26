@@ -7,19 +7,24 @@ public class menu : MonoBehaviour
 [SerializeField] public GameObject button;
     public Camera MainCamera;
     private Rigidbody2D rb;
+    public bool Clicked;
+    public Difficulty difficulty;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
+    void OnMouseDown()
+    {
+        Clicked = true;
+    }
+
     void Update()
     {
-        Vector3 mousePos = Input.mousePosition;
-        if(Input.GetMouseButtonDown(0))
+        if(difficulty.easy == true|difficulty.medium == true|difficulty.hard == true|difficulty.insane == true)
         {
-            Debug.Log(mousePos.x);
-            Debug.Log(mousePos.y);
+            Clicked = false;
         }
     }
 }
