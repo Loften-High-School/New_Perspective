@@ -344,11 +344,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOver: {fileID: 0}
-  maxSpeed: 7
+  maxSpeed: 5
   force: 3
+  difficulty: {fileID: 8057198486388022858}
   jumpforce: 750
   isGrounded: 0
   horizontalMove: 0
+  Moving: 0
   animator: {fileID: 2736782941464185337}
 --- !u!114 &8435964297230680591
 MonoBehaviour:
@@ -392,5 +394,6 @@ MonoBehaviour:
   Player: {fileID: 3610454034184928719}
   easy: 0
   medium: 0
-  hard: 1
+  hard: 0
   insane: 0
+  Prefab: {fileID: 3610454034184928719}
