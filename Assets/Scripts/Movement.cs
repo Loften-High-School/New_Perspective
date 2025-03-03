@@ -75,9 +75,9 @@ public class Movement : MonoBehaviour
         }
       if (Input.GetKeyDown(KeyCode.A))
         {
-          onground();
             rb.velocity = new Vector3(force * maxSpeed * horizontalMove, rb.velocity.y);
-            rb.AddForce(Vector3.left * maxSpeed * horizontalMove);
+            
+            rb.AddForce(Vector3.left * maxSpeed * horizontalMove * Time.deltaTime);
             Moving = true;
             Debug.Log("Key A has been pressed");
         }
@@ -146,14 +146,5 @@ public class Movement : MonoBehaviour
             gameOver.isAlive = false;
           }
         
-      }
-
-      void onground()
-      {
-        if (collider.gameObject.CompareTag("Ground"))
-              {
-                isGrounded = true;
-                Debug.Log("Ground is detected");
-              }
       }
 }
