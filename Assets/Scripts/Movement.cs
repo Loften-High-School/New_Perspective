@@ -65,7 +65,7 @@ public class Movement : MonoBehaviour
       if (Input.GetKeyDown(KeyCode.D))
         {
             rb.velocity = new Vector3(force * maxSpeed, rb.velocity.y);
-            rb.AddForce(Vector3.right * maxSpeed * horizontalMove);
+            rb.AddForce(Vector3.right * force * maxSpeed);
             Moving = true;
             Debug.Log("Key D has been pressed");
         }
