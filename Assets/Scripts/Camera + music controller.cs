@@ -16,6 +16,11 @@ public class Cameracontroller : MonoBehaviour
     public AudioSource Hard;
     public AudioSource Insane;
     public AudioSource Lobby;
+    public Camera Options;
+    public Back back;
+    public Sound sound;
+    public Music music;
+    public Option_button options;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +33,7 @@ public class Cameracontroller : MonoBehaviour
         difficulty.enabled = false;
         PlayerCamera.enabled = false;
         GameOver_Camera.enabled = false;
+        Options.enabled = false;
     }
 
     // Update is called once per frame
@@ -41,6 +47,16 @@ public class Cameracontroller : MonoBehaviour
                 PlayerCamera.enabled = false;
                 difficulty.enabled = true;
                 GameOver_Camera.enabled = false;
+                Options.enabled = false;
+            }
+
+            if(Option_button.clicked == true)
+            {
+                MenuCamera.enabled = false;
+                PlayerCamera.enabled = false;
+                difficulty.enabled = false;
+                GameOver_Camera.enabled = false;
+                Options.enabled = true;
             }
         
             if (Difficulty.easy == true)
@@ -54,6 +70,7 @@ public class Cameracontroller : MonoBehaviour
                 difficulty.enabled = false;
                 PlayerCamera.enabled = true;
                 GameOver_Camera.enabled = false;
+                Options.enabled = false;
             }
 
             if (Difficulty.medium == true)
@@ -67,6 +84,7 @@ public class Cameracontroller : MonoBehaviour
                 difficulty.enabled = false;
                 PlayerCamera.enabled = true;
                 GameOver_Camera.enabled = false;
+                Options.enabled = false;
             }
 
             if (Difficulty.hard == true)
@@ -80,6 +98,7 @@ public class Cameracontroller : MonoBehaviour
                 difficulty.enabled = false;
                 PlayerCamera.enabled = true;
                 GameOver_Camera.enabled = false;
+                Options.enabled = false;
             }
 
             if (Difficulty.insane == true)
@@ -93,6 +112,7 @@ public class Cameracontroller : MonoBehaviour
                 difficulty.enabled = false;
                 PlayerCamera.enabled = true;
                 GameOver_Camera.enabled = false;
+                Options.enabled = false;
             }
         }
 
@@ -106,6 +126,7 @@ public class Cameracontroller : MonoBehaviour
             MenuCamera.enabled = false;
             difficulty.enabled = false;
             GameOver_Camera.enabled = true;
+            Options.enabled = false;
         }
     }
 }
