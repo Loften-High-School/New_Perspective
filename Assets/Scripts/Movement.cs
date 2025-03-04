@@ -9,6 +9,7 @@ public class Movement : MonoBehaviour
     public float maxSpeed;
     public float force;
     public Difficulty difficulty;
+    public AudioSource Jump_sound;
   //Jumpforce variable
   [SerializeField] int jumpforce;
 
@@ -76,7 +77,8 @@ public class Movement : MonoBehaviour
       if (Input.GetKeyDown(KeyCode.A))
         {
             rb.velocity = new Vector3(force * maxSpeed * horizontalMove, rb.velocity.y);
-            rb.AddForce(Vector3.left * maxSpeed * horizontalMove);
+            
+            rb.AddForce(Vector3.left * maxSpeed * horizontalMove * Time.deltaTime);
             Moving = true;
             Debug.Log("Key A has been pressed");
         }
@@ -84,7 +86,7 @@ public class Movement : MonoBehaviour
         {
             if (isGrounded != false)
             {
-              animator.SetBool("isJumping", true);
+              Jump_sound.enabled = true;
               isGrounded = false;
               rb.AddForce(Vector3.up * jumpforce);
               Debug.Log("Key Space has been pressed");
@@ -95,6 +97,7 @@ public class Movement : MonoBehaviour
             if (isGrounded != false)
             {
               isGrounded = false;
+              Jump_sound.enabled = true;
               rb.AddForce(Vector3.up * jumpforce);
               Debug.Log("Key W has been pressed");
             }
@@ -103,8 +106,8 @@ public class Movement : MonoBehaviour
         {
             if (isGrounded != false)
             {
-              animator.SetBool("isJumping", true);
               isGrounded = false;
+              Jump_sound.enabled = true;
               rb.AddForce(Vector3.up * jumpforce);
               Debug.Log("Key Up Arrow has been pressed");
             }
@@ -131,6 +134,7 @@ public class Movement : MonoBehaviour
       {
         if (isGrounded == false)
           {
+            Jump_sound.enabled = false;
             if (collider.gameObject.CompareTag("Ground"))
               {
                 isGrounded = true;
