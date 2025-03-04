@@ -2,14 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sound_Button : MonoBehaviour
+public class Back_button : MonoBehaviour
 {
 [SerializeField] public GameObject button;
-public Animator animator;
-public AudioSource Player;
-public bool clicked;
-private Rigidbody2D rb;
-
+    private Rigidbody2D rb;
+    public bool Clicked;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,16 +15,11 @@ private Rigidbody2D rb;
 
     void OnMouseDown()
     {
-        clicked = true;
+        Clicked = true;
     }
 
     void Update()
     {
         
-
-        if(clicked == true)
-        {
-            Player.enabled = false;
-        }
     }
 }

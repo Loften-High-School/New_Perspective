@@ -20,9 +20,6 @@ public class Option_button : MonoBehaviour
 
     void Update()
     {
-        if(difficulty.easy == true|difficulty.medium == true|difficulty.hard == true|difficulty.insane == true)
-        {
-            Clicked = false;
-        }
+        
     }
 }

@@ -17,9 +17,9 @@ public class Cameracontroller : MonoBehaviour
     public AudioSource Insane;
     public AudioSource Lobby;
     public Camera Options;
-    public Back back;
-    public Sound sound;
-    public Music music;
+    public Back_button back;
+    public Sound_Button sound;
+    public Music_Button music;
     public Option_button options;
     // Start is called before the first frame update
     void Start()
@@ -50,13 +50,22 @@ public class Cameracontroller : MonoBehaviour
                 Options.enabled = false;
             }
 
-            if(Option_button.clicked == true)
+            if(options.Clicked == true)
             {
                 MenuCamera.enabled = false;
                 PlayerCamera.enabled = false;
                 difficulty.enabled = false;
                 GameOver_Camera.enabled = false;
                 Options.enabled = true;
+            }
+
+            if(back.Clicked == true)
+            {
+                MenuCamera.enabled = true;
+                PlayerCamera.enabled = false;
+                difficulty.enabled = false;
+                GameOver_Camera.enabled = false;
+                Options.enabled = false;
             }
         
             if (Difficulty.easy == true)
