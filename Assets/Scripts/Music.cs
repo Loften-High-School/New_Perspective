@@ -10,6 +10,7 @@ public AudioSource Easy;
 public AudioSource Medium;
 public AudioSource Hard;
 public AudioSource Insane;
+public AudioSource Lobby;
 public bool clicked;
 private Rigidbody2D rb;
 public float ON;
@@ -18,24 +19,35 @@ public float ON;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        ON = 1;
+        animator.SetFloat("on", Mathf.Abs(ON));
     }
 
     void OnMouseDown()
     {
         clicked = true;
-    }
-
-    void Update()
-    {
-        animator.SetFloat("on", Mathf.Abs(ON));
-
-        if(clicked == true)
+        if(clicked == true && ON > 0)
         {
+            ON = -1;
             animator.SetFloat("on", -1);
             Easy.enabled = false;
             Medium.enabled = false;
             Hard.enabled = false;
             Insane.enabled = false;
+            Lobby.enabled = false;
+            clicked = false;
         }
+        
+        else if(clicked == true && ON < 0)
+        {
+            ON = 1;
+            animator.SetFloat("on", 1);
+            Lobby.enabled = true;
+            clicked = false;
+        }
+    }
+    void Update()
+    {
+        
     }
 }

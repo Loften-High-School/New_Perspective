@@ -348,6 +348,8 @@ MonoBehaviour:
   maxSpeed: 5
   force: 3
   difficulty: {fileID: 8057198486388022858}
+  Jump_sound: {fileID: 844155279010360422}
+  Sound: {fileID: 0}
   jumpforce: 750
   isGrounded: 0
   horizontalMove: 0

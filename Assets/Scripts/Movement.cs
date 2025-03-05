@@ -10,6 +10,7 @@ public class Movement : MonoBehaviour
     public float force;
     public Difficulty difficulty;
     public AudioSource Jump_sound;
+    public Sound_Button Sound;
   //Jumpforce variable
   [SerializeField] int jumpforce;
 
@@ -27,11 +28,17 @@ public class Movement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        Jump_sound.enabled = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(Sound.ON == -1)
+        {
+          Jump_sound.enabled = false;
+        }
+        
         horizontalMove = Input.GetAxisRaw("walk");
         animator.SetFloat("speed", Mathf.Abs(horizontalMove));
       if (horizontalMove > 0)
@@ -86,7 +93,10 @@ public class Movement : MonoBehaviour
         {
             if (isGrounded != false)
             {
-              Jump_sound.enabled = true;
+              if(Sound.ON == 1)
+              {
+                Jump_sound.enabled = true;
+              }
               isGrounded = false;
               rb.AddForce(Vector3.up * jumpforce);
               Debug.Log("Key Space has been pressed");
@@ -96,6 +106,10 @@ public class Movement : MonoBehaviour
         {
             if (isGrounded != false)
             {
+              if(Sound.ON == 1)
+              {
+                Jump_sound.enabled = true;
+              }
               isGrounded = false;
               Jump_sound.enabled = true;
               rb.AddForce(Vector3.up * jumpforce);
@@ -106,6 +120,10 @@ public class Movement : MonoBehaviour
         {
             if (isGrounded != false)
             {
+              if(Sound.ON == 1)
+              {
+                Jump_sound.enabled = true;
+              }
               isGrounded = false;
               Jump_sound.enabled = true;
               rb.AddForce(Vector3.up * jumpforce);

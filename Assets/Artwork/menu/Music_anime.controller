@@ -8,7 +8,7 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 3
+  - m_ConditionMode: 4
     m_ConditionEvent: on
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
@@ -61,7 +61,7 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 4
+  - m_ConditionMode: 3
     m_ConditionEvent: on
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
@@ -89,7 +89,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 5610173989726549587}
-    m_Position: {x: 336.99402, y: 64.73389, z: 0}
+    m_Position: {x: 340, y: 60, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 2938736602243157612}
     m_Position: {x: 469.45282, y: 182.94977, z: 0}
@@ -110,7 +110,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: New State
+  m_Name: Music off
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -124,7 +124,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 61a7d763841134473a5fc62c37c76a89, type: 2}
+  m_Motion: {fileID: 7400000, guid: 1e57834ad1992445bae6285093f49447, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -151,7 +151,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 32bc17b4197964b928a91f03d003c4f6, type: 2}
+  m_Motion: {fileID: 7400000, guid: c0ab4bed9245c49999803aca6632e167, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

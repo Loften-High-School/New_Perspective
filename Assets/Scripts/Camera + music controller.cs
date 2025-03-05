@@ -8,6 +8,7 @@ public class Cameracontroller : MonoBehaviour
     public Camera PlayerCamera;
     public Camera difficulty;
     public Camera GameOver_Camera;
+    public Camera Options_Camera;
     public Difficulty Difficulty;
     public menu Play;
     public GameOver gameOver;
@@ -16,6 +17,9 @@ public class Cameracontroller : MonoBehaviour
     public AudioSource Hard;
     public AudioSource Insane;
     public AudioSource Lobby;
+    public Option_button Options;
+    public Back_button Back;
+    public Music_Button music;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +32,10 @@ public class Cameracontroller : MonoBehaviour
         difficulty.enabled = false;
         PlayerCamera.enabled = false;
         GameOver_Camera.enabled = false;
+        Options_Camera.enabled = false;
+        Play.Clicked = false;
+        Options.Clicked = false;
+        Back.Clicked = false;
     }
 
     // Update is called once per frame
@@ -35,64 +43,143 @@ public class Cameracontroller : MonoBehaviour
     {
         if(gameOver.isAlive == true)
         {
+            if(music.ON < 0)
+            {
+                Lobby.enabled = false;
+            }
+            
             if(Play.Clicked == true)
             {
                 MenuCamera.enabled = false;
                 PlayerCamera.enabled = false;
                 difficulty.enabled = true;
                 GameOver_Camera.enabled = false;
+                Options_Camera.enabled = false;
+                Options.Clicked = false;
+                Back.Clicked = false;
+            }
+
+            if(Back.Clicked == true)
+            {
+                MenuCamera.enabled = true;
+                PlayerCamera.enabled = false;
+                difficulty.enabled = false;
+                GameOver_Camera.enabled = false;
+                Options_Camera.enabled = false;
+                Options.Clicked = false;
+                Play.Clicked = false;
+                Back.Clicked = false;
+            }
+
+            if(Options.Clicked == true)
+            {
+                MenuCamera.enabled = false;
+                PlayerCamera.enabled = false;
+                difficulty.enabled = false;
+                GameOver_Camera.enabled = false;
+                Options_Camera.enabled = true;
+                Play.Clicked = false;
+                Back.Clicked = false;
             }
         
             if (Difficulty.easy == true)
             {
-                Lobby.enabled = false;
-                Easy.enabled = true;
-                Medium.enabled = false;
-                Hard.enabled = false;
-                Insane.enabled = false;
+                if(music.ON < 0)
+                {
+                    Lobby.enabled = false;
+                    Easy.enabled = false;
+                    Medium.enabled = false;
+                    Hard.enabled = false;
+                    Insane.enabled = false;
+                }
+                else if(music.ON > 0)
+                {
+                    Lobby.enabled = false;
+                    Easy.enabled = true;
+                    Medium.enabled = false;
+                    Hard.enabled = false;
+                    Insane.enabled = false;
+                }
                 MenuCamera.enabled = false;
                 difficulty.enabled = false;
                 PlayerCamera.enabled = true;
                 GameOver_Camera.enabled = false;
+                Options_Camera.enabled = false;
             }
 
             if (Difficulty.medium == true)
             {
-                Lobby.enabled = false;
-                Easy.enabled = false;
-                Medium.enabled = true;
-                Hard.enabled = false;
-                Insane.enabled = false;
+                if(music.ON < 0)
+                {
+                    Lobby.enabled = false;
+                    Easy.enabled = false;
+                    Medium.enabled = false;
+                    Hard.enabled = false;
+                    Insane.enabled = false;
+                }
+                else if(music.ON > 0)
+                {
+                    Lobby.enabled = false;
+                    Easy.enabled = false;
+                    Medium.enabled = true;
+                    Hard.enabled = false;
+                    Insane.enabled = false;
+                }
                 MenuCamera.enabled = false;
                 difficulty.enabled = false;
                 PlayerCamera.enabled = true;
                 GameOver_Camera.enabled = false;
+                Options_Camera.enabled = false;
             }
 
             if (Difficulty.hard == true)
             {
-                Lobby.enabled = false;
-                Easy.enabled = false;
-                Medium.enabled = false;
-                Hard.enabled = true;
-                Insane.enabled = false;
+                if(music.ON < 0)
+                {
+                    Lobby.enabled = false;
+                    Easy.enabled = false;
+                    Medium.enabled = false;
+                    Hard.enabled = false;
+                    Insane.enabled = false;
+                }
+                else if(music.ON > 0)
+                {
+                    Lobby.enabled = false;
+                    Easy.enabled = true;
+                    Medium.enabled = false;
+                    Hard.enabled = true;
+                    Insane.enabled = false;
+                }
                 MenuCamera.enabled = false;
                 difficulty.enabled = false;
                 PlayerCamera.enabled = true;
                 GameOver_Camera.enabled = false;
+                Options_Camera.enabled = false;
             }
 
             if (Difficulty.insane == true)
             {
-                Lobby.enabled = false;
-                Easy.enabled = false;
-                Medium.enabled = false;
-                Hard.enabled = false;
-                Insane.enabled = true;
+                if(music.ON < 0)
+                {
+                    Lobby.enabled = false;
+                    Easy.enabled = false;
+                    Medium.enabled = false;
+                    Hard.enabled = false;
+                    Insane.enabled = false;
+                }
+                else if(music.ON > 0)
+                {
+                    Lobby.enabled = false;
+                    Easy.enabled = true;
+                    Medium.enabled = false;
+                    Hard.enabled = false;
+                    Insane.enabled = true;
+                }
                 MenuCamera.enabled = false;
                 difficulty.enabled = false;
                 PlayerCamera.enabled = true;
                 GameOver_Camera.enabled = false;
+                Options_Camera.enabled = false;
             }
         }
 
@@ -106,6 +193,7 @@ public class Cameracontroller : MonoBehaviour
             MenuCamera.enabled = false;
             difficulty.enabled = false;
             GameOver_Camera.enabled = true;
+            Options_Camera.enabled = false;
         }
     }
 }
