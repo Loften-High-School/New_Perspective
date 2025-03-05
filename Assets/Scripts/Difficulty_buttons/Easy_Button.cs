@@ -26,10 +26,5 @@ public class Easy_Button : MonoBehaviour
         {
             Difficulty.easy = true;
         }
-        
-        if(Difficulty.medium == true|Difficulty.hard == true|Difficulty.insane == true)
-        {
-            EasyClicked = false;
-        }
     }
 }

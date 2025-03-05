@@ -26,10 +26,5 @@ public class Medium_Button : MonoBehaviour
         {
             Difficulty.medium = true;
         }
-        
-        if(Difficulty.easy == true|Difficulty.hard == true|Difficulty.insane == true)
-        {
-            MediumClicked = false;
-        }
     }
 }

@@ -26,10 +26,5 @@ public class Insane_Button : MonoBehaviour
         {
             Difficulty.insane = true;
         }
-        
-        if(Difficulty.easy == true|Difficulty.medium == true|Difficulty.hard == true)
-        {
-            InsaneClicked = false;
-        }
     }
 }
