@@ -145,7 +145,7 @@ public class Cameracontroller : MonoBehaviour
                 else if(music.ON > 0)
                 {
                     Lobby.enabled = false;
-                    Easy.enabled = true;
+                    Easy.enabled = false;
                     Medium.enabled = false;
                     Hard.enabled = true;
                     Insane.enabled = false;
@@ -170,7 +170,7 @@ public class Cameracontroller : MonoBehaviour
                 else if(music.ON > 0)
                 {
                     Lobby.enabled = false;
-                    Easy.enabled = true;
+                    Easy.enabled = false;
                     Medium.enabled = false;
                     Hard.enabled = false;
                     Insane.enabled = true;
