@@ -37,6 +37,7 @@ public class Cameracontroller : MonoBehaviour
         Play.Clicked = false;
         Options.Clicked = false;
         Back.Clicked = false;
+        back.Clicked = false;
     }
 
     // Update is called once per frame
@@ -70,6 +71,7 @@ public class Cameracontroller : MonoBehaviour
                 Options.Clicked = false;
                 Play.Clicked = false;
                 Back.Clicked = false;
+                back.Clicked = false;
             }
 
             if(back.Clicked == true)
@@ -81,6 +83,7 @@ public class Cameracontroller : MonoBehaviour
                 Options_Camera.enabled = false;
                 Options.Clicked = false;
                 Play.Clicked = false;
+                back.Clicked = false;
                 Back.Clicked = false;
             }
 
@@ -93,6 +96,7 @@ public class Cameracontroller : MonoBehaviour
                 Options_Camera.enabled = true;
                 Play.Clicked = false;
                 Back.Clicked = false;
+                back.Clicked = false;
             }
         
             if (Difficulty.easy == true)
