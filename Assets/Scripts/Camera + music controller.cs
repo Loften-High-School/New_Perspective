@@ -20,6 +20,7 @@ public class Cameracontroller : MonoBehaviour
     public Option_button Options;
     public Back_button Back;
     public Music_Button music;
+    public Back_button back;
     // Start is called before the first frame update
     void Start()
     {
@@ -60,6 +61,18 @@ public class Cameracontroller : MonoBehaviour
             }
 
             if(Back.Clicked == true)
+            {
+                MenuCamera.enabled = true;
+                PlayerCamera.enabled = false;
+                difficulty.enabled = false;
+                GameOver_Camera.enabled = false;
+                Options_Camera.enabled = false;
+                Options.Clicked = false;
+                Play.Clicked = false;
+                Back.Clicked = false;
+            }
+
+            if(back.Clicked == true)
             {
                 MenuCamera.enabled = true;
                 PlayerCamera.enabled = false;
