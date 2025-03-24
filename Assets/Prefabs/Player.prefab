@@ -384,7 +384,10 @@ MonoBehaviour:
   mediumpointerspawnpoints: []
   hardpointerspawnpoints: []
   insanepointerspawnpoints: []
-  pointer: {fileID: 4856301328092458823, guid: c721eb95c5e1142168956edf27e0c6ec, type: 3}
+  Easy_pointer: {fileID: 0}
+  Medium_pointer: {fileID: 0}
+  Hard_pointer: {fileID: 0}
+  Insane_pointer: {fileID: 0}
   difficulty: {fileID: 0}
 --- !u!114 &8057198486388022858
 MonoBehaviour:

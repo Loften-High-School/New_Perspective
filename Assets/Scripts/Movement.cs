@@ -31,6 +31,7 @@ public class Movement : MonoBehaviour
         Jump_sound.enabled = false;
     }
 
+    
     // Update is called once per frame
     void Update()
     {
