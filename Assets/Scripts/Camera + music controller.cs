@@ -9,6 +9,7 @@ public class Cameracontroller : MonoBehaviour
     public Camera difficulty;
     public Camera GameOver_Camera;
     public Camera Options_Camera;
+    public Camera Pause_Camera;
     public Difficulty Difficulty;
     public menu Play;
     public GameOver gameOver;
@@ -18,9 +19,11 @@ public class Cameracontroller : MonoBehaviour
     public AudioSource Insane;
     public AudioSource Lobby;
     public Option_button Options;
+    public Option_button options;
     public Back_button Back;
     public Music_Button music;
     public Back_button back;
+    public Pause pause;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +41,7 @@ public class Cameracontroller : MonoBehaviour
         Options.Clicked = false;
         Back.Clicked = false;
         back.Clicked = false;
+        Pause_Camera.enabled = false;
     }
 
     // Update is called once per frame
@@ -59,6 +63,19 @@ public class Cameracontroller : MonoBehaviour
                 Options_Camera.enabled = false;
                 Options.Clicked = false;
                 Back.Clicked = false;
+                Pause_Camera.enabled = false;
+            }
+
+            if(pause.paused == true)
+            {
+                MenuCamera.enabled = false;
+                PlayerCamera.enabled = false;
+                difficulty.enabled = true;
+                GameOver_Camera.enabled = false;
+                Options_Camera.enabled = false;
+                Options.Clicked = false;
+                Back.Clicked = false;
+                Pause_Camera.enabled = true;
             }
 
             if(Back.Clicked == true)
@@ -72,6 +89,7 @@ public class Cameracontroller : MonoBehaviour
                 Play.Clicked = false;
                 Back.Clicked = false;
                 back.Clicked = false;
+                Pause_Camera.enabled = false;
             }
 
             if(back.Clicked == true)
@@ -85,6 +103,7 @@ public class Cameracontroller : MonoBehaviour
                 Play.Clicked = false;
                 back.Clicked = false;
                 Back.Clicked = false;
+                Pause_Camera.enabled = false;
             }
 
             if(Options.Clicked == true)
@@ -97,6 +116,20 @@ public class Cameracontroller : MonoBehaviour
                 Play.Clicked = false;
                 Back.Clicked = false;
                 back.Clicked = false;
+                Pause_Camera.enabled = false;
+            }
+
+            if(options.Clicked == true)
+            {
+                MenuCamera.enabled = false;
+                PlayerCamera.enabled = false;
+                difficulty.enabled = false;
+                GameOver_Camera.enabled = false;
+                Options_Camera.enabled = true;
+                Play.Clicked = false;
+                Back.Clicked = false;
+                back.Clicked = false;
+                Pause_Camera.enabled = false;
             }
         
             if (Difficulty.easy == true)
@@ -122,6 +155,7 @@ public class Cameracontroller : MonoBehaviour
                 PlayerCamera.enabled = true;
                 GameOver_Camera.enabled = false;
                 Options_Camera.enabled = false;
+                Pause_Camera.enabled = false;
             }
 
             if (Difficulty.medium == true)
@@ -147,6 +181,7 @@ public class Cameracontroller : MonoBehaviour
                 PlayerCamera.enabled = true;
                 GameOver_Camera.enabled = false;
                 Options_Camera.enabled = false;
+                Pause_Camera.enabled = false;
             }
 
             if (Difficulty.hard == true)
@@ -172,6 +207,7 @@ public class Cameracontroller : MonoBehaviour
                 PlayerCamera.enabled = true;
                 GameOver_Camera.enabled = false;
                 Options_Camera.enabled = false;
+                Pause_Camera.enabled = false;
             }
 
             if (Difficulty.insane == true)
@@ -197,6 +233,7 @@ public class Cameracontroller : MonoBehaviour
                 PlayerCamera.enabled = true;
                 GameOver_Camera.enabled = false;
                 Options_Camera.enabled = false;
+                Pause_Camera.enabled = false;
             }
         }
 
@@ -211,6 +248,7 @@ public class Cameracontroller : MonoBehaviour
             difficulty.enabled = false;
             GameOver_Camera.enabled = true;
             Options_Camera.enabled = false;
+            Pause_Camera.enabled = false;
         }
     }
 }

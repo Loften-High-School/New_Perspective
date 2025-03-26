@@ -1,0 +1,27 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Pause : MonoBehaviour
+{
+    private Rigidbody2D rb;
+    public bool paused;
+    
+    // Start is called before the first frame update
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Tab))
+        {
+            Debug.Log("Game has been paused");
+            paused = true;
+            rb.constraints = RigidbodyConstraints2D.FreezePosition;
+
+        }
+    }
+}
