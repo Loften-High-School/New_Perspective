@@ -23,6 +23,8 @@ public class Cameracontroller : MonoBehaviour
     public Back_button Back;
     public Music_Button music;
     public Back_button back;
+    public Resume resume;
+    public Home home;
     public Pause pause;
     // Start is called before the first frame update
     void Start()
@@ -42,6 +44,8 @@ public class Cameracontroller : MonoBehaviour
         Back.Clicked = false;
         back.Clicked = false;
         Pause_Camera.enabled = false;
+        resume.clicked = false;
+        home.clicked = false;
     }
 
     // Update is called once per frame
