@@ -5,6 +5,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 
 {
+    public Movement movement;
     public GameOver gameOver;
     public float maxSpeed;
     public float force;
@@ -23,7 +24,9 @@ public class Movement : MonoBehaviour
     
     public Animator animator;
     
-    private Rigidbody2D rb; 
+    private Rigidbody2D rb;
+
+    public Pause pause;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +38,15 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(pause.paused == true)
+        {
+          movement.enabled = false;
+        }
+        else if(pause.paused == false)
+        {
+          movement.enabled = true;
+        }
+        
         if(Sound.ON == -1)
         {
           Jump_sound.enabled = false;

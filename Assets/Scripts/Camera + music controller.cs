@@ -70,11 +70,23 @@ public class Cameracontroller : MonoBehaviour
                 Pause_Camera.enabled = false;
             }
 
+            if(home.clicked == true)
+            {
+                MenuCamera.enabled = true;
+                PlayerCamera.enabled = false;
+                difficulty.enabled = false;
+                GameOver_Camera.enabled = false;
+                Options_Camera.enabled = false;
+                Options.Clicked = false;
+                Back.Clicked = false;
+                Pause_Camera.enabled = false;
+            }
+
             if(pause.paused == true)
             {
                 MenuCamera.enabled = false;
                 PlayerCamera.enabled = false;
-                difficulty.enabled = true;
+                difficulty.enabled = false;
                 GameOver_Camera.enabled = false;
                 Options_Camera.enabled = false;
                 Options.Clicked = false;
@@ -84,16 +96,32 @@ public class Cameracontroller : MonoBehaviour
 
             if(Back.Clicked == true)
             {
-                MenuCamera.enabled = true;
-                PlayerCamera.enabled = false;
-                difficulty.enabled = false;
-                GameOver_Camera.enabled = false;
-                Options_Camera.enabled = false;
-                Options.Clicked = false;
-                Play.Clicked = false;
-                Back.Clicked = false;
-                back.Clicked = false;
-                Pause_Camera.enabled = false;
+                if(options.Clicked == false)
+                {
+                    MenuCamera.enabled = true;
+                    PlayerCamera.enabled = false;
+                    difficulty.enabled = false;
+                    GameOver_Camera.enabled = false;
+                    Options_Camera.enabled = false;
+                    Options.Clicked = false;
+                    Play.Clicked = false;
+                    Back.Clicked = false;
+                    back.Clicked = false;
+                    Pause_Camera.enabled = false;
+                }
+                else if(options.Clicked == true)
+                {
+                    MenuCamera.enabled = false;
+                    PlayerCamera.enabled = false;
+                    difficulty.enabled = false;
+                    GameOver_Camera.enabled = false;
+                    Options_Camera.enabled = false;
+                    Options.Clicked = false;
+                    Play.Clicked = false;
+                    Back.Clicked = false;
+                    back.Clicked = false;
+                    Pause_Camera.enabled = true;
+                }
             }
 
             if(back.Clicked == true)
@@ -135,6 +163,19 @@ public class Cameracontroller : MonoBehaviour
                 back.Clicked = false;
                 Pause_Camera.enabled = false;
             }
+
+            if(resume.clicked == true)
+            {
+                MenuCamera.enabled = false;
+                PlayerCamera.enabled = true;
+                difficulty.enabled = false;
+                GameOver_Camera.enabled = false;
+                Options_Camera.enabled = false;
+                Play.Clicked = false;
+                Pause_Camera.enabled = false;
+                resume.clicked = false;
+                pause.paused = false;
+            }
         
             if (Difficulty.easy == true)
             {
@@ -156,10 +197,19 @@ public class Cameracontroller : MonoBehaviour
                 }
                 MenuCamera.enabled = false;
                 difficulty.enabled = false;
-                PlayerCamera.enabled = true;
                 GameOver_Camera.enabled = false;
                 Options_Camera.enabled = false;
-                Pause_Camera.enabled = false;
+                
+                if(pause.paused == false)
+                {
+                    Pause_Camera.enabled = false;
+                    PlayerCamera.enabled = true;
+                }
+                else if(pause.paused == true)
+                {
+                    Pause_Camera.enabled = true;
+                    PlayerCamera.enabled = false;
+                }
             }
 
             if (Difficulty.medium == true)
@@ -185,7 +235,16 @@ public class Cameracontroller : MonoBehaviour
                 PlayerCamera.enabled = true;
                 GameOver_Camera.enabled = false;
                 Options_Camera.enabled = false;
-                Pause_Camera.enabled = false;
+                if(pause.paused == false)
+                {
+                    Pause_Camera.enabled = false;
+                    PlayerCamera.enabled = true;
+                }
+                else if(pause.paused == true)
+                {
+                    Pause_Camera.enabled = true;
+                    PlayerCamera.enabled = false;
+                }
             }
 
             if (Difficulty.hard == true)
@@ -211,7 +270,16 @@ public class Cameracontroller : MonoBehaviour
                 PlayerCamera.enabled = true;
                 GameOver_Camera.enabled = false;
                 Options_Camera.enabled = false;
-                Pause_Camera.enabled = false;
+                if(pause.paused == false)
+                {
+                    Pause_Camera.enabled = false;
+                    PlayerCamera.enabled = true;
+                }
+                else if(pause.paused == true)
+                {
+                    Pause_Camera.enabled = true;
+                    PlayerCamera.enabled = false;
+                }
             }
 
             if (Difficulty.insane == true)
@@ -237,7 +305,16 @@ public class Cameracontroller : MonoBehaviour
                 PlayerCamera.enabled = true;
                 GameOver_Camera.enabled = false;
                 Options_Camera.enabled = false;
-                Pause_Camera.enabled = false;
+                if(pause.paused == false)
+                {
+                    Pause_Camera.enabled = false;
+                    PlayerCamera.enabled = true;
+                }
+                else if(pause.paused == true)
+                {
+                    Pause_Camera.enabled = true;
+                    PlayerCamera.enabled = false;
+                }
             }
         }
 
