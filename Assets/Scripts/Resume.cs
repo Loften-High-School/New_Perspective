@@ -7,6 +7,7 @@ public class Resume : MonoBehaviour
     private Rigidbody2D rb;
     public bool clicked;
     public GameObject button;
+    public Pause pause;
     
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,9 @@ public class Resume : MonoBehaviour
 
     void Update()
     {
-
+        if(clicked == true)
+        {
+            pause.paused = false;
+        }
     }
 }
