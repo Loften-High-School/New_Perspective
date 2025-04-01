@@ -242,9 +242,8 @@ public class Cameracontroller : MonoBehaviour
                 }
                 MenuCamera.enabled = false;
                 difficulty.enabled = false;
-                PlayerCamera.enabled = true;
                 GameOver_Camera.enabled = false;
-                Options_Camera.enabled = false;
+                
                 if(pause.paused == false)
                 {
                     Pause_Camera.enabled = false;
@@ -252,8 +251,11 @@ public class Cameracontroller : MonoBehaviour
                 }
                 else if(pause.paused == true)
                 {
-                    Pause_Camera.enabled = true;
                     PlayerCamera.enabled = false;
+                    if(options.Clicked == true)
+                    {
+                        Options_Camera.enabled = true;
+                    }
                 }
             }
 
@@ -277,9 +279,8 @@ public class Cameracontroller : MonoBehaviour
                 }
                 MenuCamera.enabled = false;
                 difficulty.enabled = false;
-                PlayerCamera.enabled = true;
                 GameOver_Camera.enabled = false;
-                Options_Camera.enabled = false;
+                
                 if(pause.paused == false)
                 {
                     Pause_Camera.enabled = false;
@@ -287,8 +288,11 @@ public class Cameracontroller : MonoBehaviour
                 }
                 else if(pause.paused == true)
                 {
-                    Pause_Camera.enabled = true;
                     PlayerCamera.enabled = false;
+                    if(options.Clicked == true)
+                    {
+                        Options_Camera.enabled = true;
+                    }
                 }
             }
 
@@ -312,9 +316,8 @@ public class Cameracontroller : MonoBehaviour
                 }
                 MenuCamera.enabled = false;
                 difficulty.enabled = false;
-                PlayerCamera.enabled = true;
                 GameOver_Camera.enabled = false;
-                Options_Camera.enabled = false;
+                
                 if(pause.paused == false)
                 {
                     Pause_Camera.enabled = false;
@@ -322,8 +325,11 @@ public class Cameracontroller : MonoBehaviour
                 }
                 else if(pause.paused == true)
                 {
-                    Pause_Camera.enabled = true;
                     PlayerCamera.enabled = false;
+                    if(options.Clicked == true)
+                    {
+                        Options_Camera.enabled = true;
+                    }
                 }
             }
         }
