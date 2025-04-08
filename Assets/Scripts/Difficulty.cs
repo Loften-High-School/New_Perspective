@@ -15,6 +15,7 @@ public class Difficulty : MonoBehaviour
     public Medium_Button Medium_Button;
     public Hard_Button Hard_Button;
     public Insane_Button Insane_Button;
+    public Pause pause;
 
     
     // Start is called before the first frame update
@@ -66,6 +67,13 @@ public class Difficulty : MonoBehaviour
             rb.constraints = RigidbodyConstraints2D.None;
             Debug.Log("Insane Mode selected");
             Insane_Button.InsaneClicked = false;
+        }
+
+        if(pause.paused == true)
+        {
+            rb.constraints = RigidbodyConstraints2D.FreezePositionX;
+            rb.constraints = RigidbodyConstraints2D.FreezePositionY;
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
     }
 }

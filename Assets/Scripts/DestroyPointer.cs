@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class DestroyPointer : MonoBehaviour
 {
-    private pointsystem pointsystem;
     
     
     // Start is called before the first frame update
     void Start()
     {
-         pointsystem = GetComponent ("GameManager") as pointsystem;
+        
     }
 
     // Update is called once per frame
