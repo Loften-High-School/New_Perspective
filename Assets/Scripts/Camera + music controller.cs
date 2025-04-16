@@ -28,6 +28,7 @@ public class Cameracontroller : MonoBehaviour
     public Home home;
     public Pause pause;
     public Back_button _back;
+    public Option_button Controls;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,6 +52,7 @@ public class Cameracontroller : MonoBehaviour
         resume.clicked = false;
         home.clicked = false;
         pause.paused = false;
+        Controls.Clicked = false;
     }
 
     // Update is called once per frame
@@ -75,6 +77,7 @@ public class Cameracontroller : MonoBehaviour
                 Pause_Camera.enabled = false;
                 home.clicked = false;
                 Controls_camera.enabled = false;
+                Controls.Clicked = false;
             }
 
             if(home.clicked == true)
@@ -94,6 +97,7 @@ public class Cameracontroller : MonoBehaviour
                 Pause_Camera.enabled = false;
                 pause.paused = false;
                 Controls_camera.enabled = false;
+                Controls.Clicked = false;
             }
 
             if(pause.paused == true)
@@ -105,6 +109,7 @@ public class Cameracontroller : MonoBehaviour
                 Options.Clicked = false;
                 Pause_Camera.enabled = true;
                 Controls_camera.enabled = false;
+                Controls.Clicked = false;
             }
 
             if(Back.Clicked == true)
@@ -122,6 +127,7 @@ public class Cameracontroller : MonoBehaviour
                     Back.Clicked = false;
                     Pause_Camera.enabled = false;
                     Controls_camera.enabled = false;
+                    Controls.Clicked = false;
                 }
                 
                 if(options.Clicked == true)
@@ -137,6 +143,7 @@ public class Cameracontroller : MonoBehaviour
                     Back.Clicked = false;
                     Pause_Camera.enabled = true;
                     Controls_camera.enabled = false;
+                    Controls.Clicked = false;
                 }
             }
 
@@ -154,6 +161,7 @@ public class Cameracontroller : MonoBehaviour
                 Back.Clicked = false;
                 Pause_Camera.enabled = false;
                 Controls_camera.enabled = false;
+                Controls.Clicked = false;
             }
 
             if(_back.Clicked == true)
@@ -171,6 +179,24 @@ public class Cameracontroller : MonoBehaviour
                 Back.Clicked = false;
                 Pause_Camera.enabled = false;
                 Controls_camera.enabled = false;
+                Controls.Clicked = false;
+            }
+
+            if(Controls.Clicked == true)
+            {
+                MenuCamera.enabled = true;
+                PlayerCamera.enabled = false;
+                difficulty.enabled = false;
+                GameOver_Camera.enabled = false;
+                Options_Camera.enabled = false;
+                Options.Clicked = false;
+                options.Clicked = false;
+                Play.Clicked = false;
+                back.Clicked = false;
+                _back.Clicked = false;
+                Back.Clicked = false;
+                Pause_Camera.enabled = false;
+                Controls_camera.enabled = true;
             }
 
             if(Options.Clicked == true && (Back.Clicked == false))
@@ -185,6 +211,7 @@ public class Cameracontroller : MonoBehaviour
                 back.Clicked = false;
                 Pause_Camera.enabled = false;
                 Controls_camera.enabled = false;
+                Controls.Clicked = false;
             }
 
             if(options.Clicked == true && (Back.Clicked == false))
@@ -199,6 +226,7 @@ public class Cameracontroller : MonoBehaviour
                 back.Clicked = false;
                 Pause_Camera.enabled = false;
                 Controls_camera.enabled = false;
+                Controls.Clicked = false;
             }
 
             if(resume.clicked == true)
@@ -213,6 +241,7 @@ public class Cameracontroller : MonoBehaviour
                 resume.clicked = false;
                 pause.paused = false;
                 Controls_camera.enabled = false;
+                Controls.Clicked = false;
             }
         
             if (Difficulty.easy == true)
@@ -237,6 +266,7 @@ public class Cameracontroller : MonoBehaviour
                 difficulty.enabled = false;
                 GameOver_Camera.enabled = false;
                 Controls_camera.enabled = false;
+                Controls.Clicked = false;
                 
                 if(pause.paused == false)
                 {
@@ -275,6 +305,7 @@ public class Cameracontroller : MonoBehaviour
                 difficulty.enabled = false;
                 GameOver_Camera.enabled = false;
                 Controls_camera.enabled = false;
+                Controls.Clicked = false;
                 
                 if(pause.paused == false)
                 {
@@ -313,6 +344,7 @@ public class Cameracontroller : MonoBehaviour
                 difficulty.enabled = false;
                 GameOver_Camera.enabled = false;
                 Controls_camera.enabled = false;
+                Controls.Clicked = false;
                 
                 if(pause.paused == false)
                 {
@@ -351,6 +383,7 @@ public class Cameracontroller : MonoBehaviour
                 difficulty.enabled = false;
                 GameOver_Camera.enabled = false;
                 Controls_camera.enabled = false;
+                Controls.Clicked = false;
                 
                 if(pause.paused == false)
                 {
@@ -381,6 +414,7 @@ public class Cameracontroller : MonoBehaviour
             Options_Camera.enabled = false;
             Pause_Camera.enabled = false;
             Controls_camera.enabled = false;
+            Controls.Clicked = false;
         }
     }
 }
