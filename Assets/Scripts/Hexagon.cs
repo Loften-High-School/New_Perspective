@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerTeleport : MonoBehaviour
+public class Hexagon : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -25,7 +25,7 @@ public class PlayerTeleport : MonoBehaviour
 
     public float teleportCooldown;
     public bool jumped;
-    public Movement movement;
+    public Hexagon hexagon;
     public GameOver gameOver;
     public float maxSpeed;
     public float force;
@@ -46,7 +46,7 @@ public class PlayerTeleport : MonoBehaviour
     
     private Rigidbody2D rb;
 
-    public Pause pause;
+    public Hexagon_Pause pause;
     
 
     
@@ -70,11 +70,11 @@ public class PlayerTeleport : MonoBehaviour
         
         if(pause.paused == true)
         {
-          movement.enabled = false;
+          hexagon.enabled = false;
         }
         else if(pause.paused == false)
         {
-          movement.enabled = true;
+          hexagon.enabled = true;
         }
         
         if(Sound.ON == -1)

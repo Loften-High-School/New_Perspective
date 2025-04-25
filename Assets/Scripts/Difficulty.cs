@@ -16,6 +16,7 @@ public class Difficulty : MonoBehaviour
     public Hard_Button Hard_Button;
     public Insane_Button Insane_Button;
     public Pause pause;
+    public Hexagon_Pause hexagon;
 
     
     // Start is called before the first frame update
@@ -70,6 +71,13 @@ public class Difficulty : MonoBehaviour
         }
 
         if(pause.paused == true)
+        {
+            rb.constraints = RigidbodyConstraints2D.FreezePositionX;
+            rb.constraints = RigidbodyConstraints2D.FreezePositionY;
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        }
+
+        if(hexagon.paused == true)
         {
             rb.constraints = RigidbodyConstraints2D.FreezePositionX;
             rb.constraints = RigidbodyConstraints2D.FreezePositionY;
