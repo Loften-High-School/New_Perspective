@@ -7,6 +7,7 @@ public class Pause : MonoBehaviour
     private Rigidbody2D rb;
     public bool paused;
     public Movement movement;
+    public Hexagon hexagon;
     public Difficulty difficulty;
     
     // Start is called before the first frame update
@@ -33,6 +34,7 @@ public class Pause : MonoBehaviour
         if(paused == false)
         {
             movement.enabled = true;
+            hexagon.enabled = true;
             rb.constraints = RigidbodyConstraints2D.None;
             if(difficulty.easy|difficulty.medium|difficulty.hard == true)
             {

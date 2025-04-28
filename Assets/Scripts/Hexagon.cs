@@ -46,7 +46,7 @@ public class Hexagon : MonoBehaviour
     
     private Rigidbody2D rb;
 
-    public Hexagon_Pause pause;
+    public Pause pause;
     
 
     
