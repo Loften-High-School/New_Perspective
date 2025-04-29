@@ -9,6 +9,7 @@ public class Hard_Button : MonoBehaviour
     private Rigidbody2D rb;
     public bool HardClicked;
     public Difficulty Difficulty;
+    public Hexagon_Difficulty DIFFICULTY;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,7 @@ public class Hard_Button : MonoBehaviour
         if(HardClicked == true)
         {
             Difficulty.hard = true;
+            DIFFICULTY.hard = true;
         }
     }
 }

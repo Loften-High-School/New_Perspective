@@ -15,12 +15,12 @@ GameObject:
   - component: {fileID: 6237763813867536462}
   - component: {fileID: 7400701837899091328}
   - component: {fileID: 4118221179341546765}
-  - component: {fileID: 3637195904105397736}
-  - component: {fileID: 160187499779168710}
   - component: {fileID: 5808646030519781708}
-  - component: {fileID: 4693830429878739363}
   - component: {fileID: 3925900923269038383}
   - component: {fileID: 1148402480937305107}
+  - component: {fileID: 2052450208528985771}
+  - component: {fileID: 7664832562800172696}
+  - component: {fileID: 6525784451143662893}
   m_Layer: 0
   m_Name: Hexagon
   m_TagString: Player
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e4d2be54e317341998af7a36d00ea4b1, type: 3}
-  m_Color: {r: 0, g: 1, b: 0.011921406, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -288,101 +288,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &3637195904105397736
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2378759527041388329}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e70394e6d68a9412897ccc02cca0f37d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pointerspawnpoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  mediumpointerspawnpoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  hardpointerspawnpoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  insanepointerspawnpoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  Easy_pointer: {fileID: 8618315045897008510, guid: db53aff8c3261439db53a79418705d0d, type: 3}
-  Medium_pointer: {fileID: 6498728434836911440, guid: 3b12f1ec6cb8941f5be58f9cd2186fc1, type: 3}
-  Hard_pointer: {fileID: 6525299675871280181, guid: 4d1f3b340cee6467289be7736c902b03, type: 3}
-  Insane_pointer: {fileID: 2509679501318607766, guid: 8a22f21b3ff234d388b2010079798734, type: 3}
-  difficulty: {fileID: 160187499779168710}
---- !u!114 &160187499779168710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2378759527041388329}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1084d9979363847cda2ec917ebece5be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 2378759527041388329}
-  easy: 0
-  medium: 0
-  hard: 0
-  insane: 0
-  Easy_Button: {fileID: 0}
-  Medium_Button: {fileID: 0}
-  Hard_Button: {fileID: 0}
-  Insane_Button: {fileID: 0}
-  pause: {fileID: 4693830429878739363}
 --- !u!82 &5808646030519781708
 AudioSource:
   m_ObjectHideFlags: 0
@@ -479,21 +384,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &4693830429878739363
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2378759527041388329}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d7789a8770954389add15cf49be5290, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  paused: 0
-  movement: {fileID: 0}
-  difficulty: {fileID: 160187499779168710}
 --- !u!60 &3925900923269038383
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -749,3 +639,61 @@ MonoBehaviour:
   Moving: 0
   animator: {fileID: 0}
   pause: {fileID: 0}
+--- !u!114 &2052450208528985771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2378759527041388329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4aa3100b30174664b52b68d2547a637, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  paused: 0
+  hexagon: {fileID: 0}
+  difficulty: {fileID: 0}
+--- !u!114 &7664832562800172696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2378759527041388329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 012137031d139441cb0fc3b4875203d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Hexagon: {fileID: 0}
+  easy: 0
+  medium: 0
+  hard: 0
+  insane: 0
+  Easy_Button: {fileID: 0}
+  Medium_Button: {fileID: 0}
+  Hard_Button: {fileID: 0}
+  Insane_Button: {fileID: 0}
+  pause: {fileID: 0}
+--- !u!114 &6525784451143662893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2378759527041388329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8899de89626264b89aa43c553d9f04cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointerspawnpoints: []
+  mediumpointerspawnpoints: []
+  hardpointerspawnpoints: []
+  insanepointerspawnpoints: []
+  Easy_pointer: {fileID: 0}
+  Medium_pointer: {fileID: 0}
+  Hard_pointer: {fileID: 0}
+  Insane_pointer: {fileID: 0}
+  difficulty: {fileID: 0}

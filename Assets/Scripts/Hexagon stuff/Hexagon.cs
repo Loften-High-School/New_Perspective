@@ -9,27 +9,36 @@ public class Hexagon : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         Jump_sound.enabled = false;
+        ability_ready = true;
+        teleported = false;
     }
     
     // Cooldown time to prevent spamming teleport
-    private float lastTeleportTime = -Mathf.Infinity; // Track last teleport time
+    public float lastTeleportTime = -Mathf.Infinity; // Track last teleport time
 
 
     void Teleport()
     {
-        
+        teleported = true;
+        Vector3 targetPosition = teleport_spot.transform.position;
+        if(ability_ready == true)
+        {
+          transform.position = new Vector3(teleport_spot.transform.position.x, teleport_spot.transform.position.y, 0f);
+        }
     }
 
 
 
-
+    public GameObject teleport_spot;
     public float teleportCooldown;
+    public bool ability_ready;
+    public bool teleported;
     public bool jumped;
     public Hexagon hexagon;
     public GameOver gameOver;
     public float maxSpeed;
     public float force;
-    public Difficulty difficulty;
+    public Hexagon_Difficulty difficulty;
     public AudioSource Jump_sound;
     public Sound_Button Sound;
     //Jumpforce variable
@@ -46,7 +55,7 @@ public class Hexagon : MonoBehaviour
     
     private Rigidbody2D rb;
 
-    public Pause pause;
+    public Hexagon_Pause pause;
     
 
     
@@ -54,7 +63,7 @@ public class Hexagon : MonoBehaviour
     void Update()
     {
         
-        if (jumped == true)
+        if ((ability_ready == true) && (teleported == false) && (jumped == true) && (isGrounded == false))
         {
             // Ensure the cooldown has passed since the last teleport
             if (Time.time - lastTeleportTime >= teleportCooldown)
@@ -143,6 +152,11 @@ public class Hexagon : MonoBehaviour
               jumped = true;
               rb.AddForce(Vector3.up * 5 * jumpforce);
               Debug.Log("Key Space has been pressed");
+            }
+            else if(isGrounded == false)
+            {
+              Teleport();
+              Debug.Log("Player has telported");
             }
         }
       if (Input.GetKeyDown(KeyCode.W))     
