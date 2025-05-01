@@ -6,10 +6,12 @@ public class Cameracontroller : MonoBehaviour
 {
     public Camera MenuCamera;
     public Camera PlayerCamera;
+    public Camera HexagonCamera;
     public Camera difficulty;
     public Camera GameOver_Camera;
     public Camera Options_Camera;
     public Camera Pause_Camera;
+    public Camera Controls_camera;
     public Difficulty Difficulty;
     public menu Play;
     public GameOver gameOver;
@@ -26,6 +28,8 @@ public class Cameracontroller : MonoBehaviour
     public Resume resume;
     public Home home;
     public Pause pause;
+    public Back_button _back;
+    public Option_button Controls;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,16 +41,20 @@ public class Cameracontroller : MonoBehaviour
         MenuCamera.enabled = true;
         difficulty.enabled = false;
         PlayerCamera.enabled = false;
+        HexagonCamera.enabled = false;
         GameOver_Camera.enabled = false;
         Options_Camera.enabled = false;
+        Controls_camera.enabled = false;
         Play.Clicked = false;
         Options.Clicked = false;
         Back.Clicked = false;
+        _back.Clicked = false;
         back.Clicked = false;
         Pause_Camera.enabled = false;
         resume.clicked = false;
         home.clicked = false;
         pause.paused = false;
+        Controls.Clicked = false;
     }
 
     // Update is called once per frame
@@ -63,6 +71,7 @@ public class Cameracontroller : MonoBehaviour
             {
                 MenuCamera.enabled = false;
                 PlayerCamera.enabled = false;
+                HexagonCamera.enabled = false;
                 difficulty.enabled = true;
                 GameOver_Camera.enabled = false;
                 Options_Camera.enabled = false;
@@ -70,12 +79,15 @@ public class Cameracontroller : MonoBehaviour
                 Back.Clicked = false;
                 Pause_Camera.enabled = false;
                 home.clicked = false;
+                Controls_camera.enabled = false;
+                Controls.Clicked = false;
             }
 
             if(home.clicked == true)
             {
                 MenuCamera.enabled = true;
                 PlayerCamera.enabled = false;
+                HexagonCamera.enabled = false;
                 difficulty.enabled = false;
                 Difficulty.easy = false;
                 Difficulty.medium = false;
@@ -88,16 +100,21 @@ public class Cameracontroller : MonoBehaviour
                 Back.Clicked = false;
                 Pause_Camera.enabled = false;
                 pause.paused = false;
+                Controls_camera.enabled = false;
+                Controls.Clicked = false;
             }
 
             if(pause.paused == true)
             {
                 MenuCamera.enabled = false;
                 PlayerCamera.enabled = false;
+                HexagonCamera.enabled = false;
                 difficulty.enabled = false;
                 GameOver_Camera.enabled = false;
                 Options.Clicked = false;
                 Pause_Camera.enabled = true;
+                Controls_camera.enabled = false;
+                Controls.Clicked = false;
             }
 
             if(Back.Clicked == true)
@@ -106,6 +123,7 @@ public class Cameracontroller : MonoBehaviour
                 {
                     MenuCamera.enabled = true;
                     PlayerCamera.enabled = false;
+                    HexagonCamera.enabled = false;
                     difficulty.enabled = false;
                     GameOver_Camera.enabled = false;
                     Options_Camera.enabled = false;
@@ -114,12 +132,15 @@ public class Cameracontroller : MonoBehaviour
                     back.Clicked = false;
                     Back.Clicked = false;
                     Pause_Camera.enabled = false;
+                    Controls_camera.enabled = false;
+                    Controls.Clicked = false;
                 }
                 
                 if(options.Clicked == true)
                 {
                     MenuCamera.enabled = false;
                     PlayerCamera.enabled = false;
+                    HexagonCamera.enabled = false;
                     difficulty.enabled = false;
                     GameOver_Camera.enabled = false;
                     Options_Camera.enabled = false;
@@ -128,6 +149,8 @@ public class Cameracontroller : MonoBehaviour
                     back.Clicked = false;
                     Back.Clicked = false;
                     Pause_Camera.enabled = true;
+                    Controls_camera.enabled = false;
+                    Controls.Clicked = false;
                 }
             }
 
@@ -135,6 +158,7 @@ public class Cameracontroller : MonoBehaviour
             {
                 MenuCamera.enabled = true;
                 PlayerCamera.enabled = false;
+                HexagonCamera.enabled = false;
                 difficulty.enabled = false;
                 GameOver_Camera.enabled = false;
                 Options_Camera.enabled = false;
@@ -144,12 +168,52 @@ public class Cameracontroller : MonoBehaviour
                 back.Clicked = false;
                 Back.Clicked = false;
                 Pause_Camera.enabled = false;
+                Controls_camera.enabled = false;
+                Controls.Clicked = false;
+            }
+
+            if(_back.Clicked == true)
+            {
+                MenuCamera.enabled = true;
+                PlayerCamera.enabled = false;
+                HexagonCamera.enabled = false;
+                difficulty.enabled = false;
+                GameOver_Camera.enabled = false;
+                Options_Camera.enabled = false;
+                Options.Clicked = false;
+                options.Clicked = false;
+                Play.Clicked = false;
+                back.Clicked = false;
+                _back.Clicked = false;
+                Back.Clicked = false;
+                Pause_Camera.enabled = false;
+                Controls_camera.enabled = false;
+                Controls.Clicked = false;
+            }
+
+            if(Controls.Clicked == true)
+            {
+                MenuCamera.enabled = true;
+                PlayerCamera.enabled = false;
+                HexagonCamera.enabled = false;
+                difficulty.enabled = false;
+                GameOver_Camera.enabled = false;
+                Options_Camera.enabled = false;
+                Options.Clicked = false;
+                options.Clicked = false;
+                Play.Clicked = false;
+                back.Clicked = false;
+                _back.Clicked = false;
+                Back.Clicked = false;
+                Pause_Camera.enabled = false;
+                Controls_camera.enabled = true;
             }
 
             if(Options.Clicked == true && (Back.Clicked == false))
             {
                 MenuCamera.enabled = false;
                 PlayerCamera.enabled = false;
+                HexagonCamera.enabled = false;
                 difficulty.enabled = false;
                 GameOver_Camera.enabled = false;
                 Options_Camera.enabled = true;
@@ -157,12 +221,15 @@ public class Cameracontroller : MonoBehaviour
                 Play.Clicked = false;
                 back.Clicked = false;
                 Pause_Camera.enabled = false;
+                Controls_camera.enabled = false;
+                Controls.Clicked = false;
             }
 
             if(options.Clicked == true && (Back.Clicked == false))
             {
                 MenuCamera.enabled = false;
                 PlayerCamera.enabled = false;
+                HexagonCamera.enabled = false;
                 difficulty.enabled = false;
                 GameOver_Camera.enabled = false;
                 Options_Camera.enabled = true;
@@ -170,12 +237,15 @@ public class Cameracontroller : MonoBehaviour
                 Options.Clicked = false;
                 back.Clicked = false;
                 Pause_Camera.enabled = false;
+                Controls_camera.enabled = false;
+                Controls.Clicked = false;
             }
 
             if(resume.clicked == true)
             {
                 MenuCamera.enabled = false;
                 PlayerCamera.enabled = true;
+                HexagonCamera.enabled = true;
                 difficulty.enabled = false;
                 GameOver_Camera.enabled = false;
                 Options_Camera.enabled = false;
@@ -183,6 +253,8 @@ public class Cameracontroller : MonoBehaviour
                 Pause_Camera.enabled = false;
                 resume.clicked = false;
                 pause.paused = false;
+                Controls_camera.enabled = false;
+                Controls.Clicked = false;
             }
         
             if (Difficulty.easy == true)
@@ -206,15 +278,19 @@ public class Cameracontroller : MonoBehaviour
                 MenuCamera.enabled = false;
                 difficulty.enabled = false;
                 GameOver_Camera.enabled = false;
+                Controls_camera.enabled = false;
+                Controls.Clicked = false;
                 
                 if(pause.paused == false)
                 {
                     Pause_Camera.enabled = false;
                     PlayerCamera.enabled = true;
+                    HexagonCamera.enabled = true;
                 }
                 else if(pause.paused == true)
                 {
                     PlayerCamera.enabled = false;
+                    HexagonCamera.enabled = false;
                     if(options.Clicked == true)
                     {
                         Options_Camera.enabled = true;
@@ -243,15 +319,19 @@ public class Cameracontroller : MonoBehaviour
                 MenuCamera.enabled = false;
                 difficulty.enabled = false;
                 GameOver_Camera.enabled = false;
+                Controls_camera.enabled = false;
+                Controls.Clicked = false;
                 
                 if(pause.paused == false)
                 {
                     Pause_Camera.enabled = false;
                     PlayerCamera.enabled = true;
+                    HexagonCamera.enabled = true;
                 }
                 else if(pause.paused == true)
                 {
                     PlayerCamera.enabled = false;
+                    HexagonCamera.enabled = false;
                     if(options.Clicked == true)
                     {
                         Options_Camera.enabled = true;
@@ -280,15 +360,19 @@ public class Cameracontroller : MonoBehaviour
                 MenuCamera.enabled = false;
                 difficulty.enabled = false;
                 GameOver_Camera.enabled = false;
+                Controls_camera.enabled = false;
+                Controls.Clicked = false;
                 
                 if(pause.paused == false)
                 {
                     Pause_Camera.enabled = false;
                     PlayerCamera.enabled = true;
+                    HexagonCamera.enabled = true;
                 }
                 else if(pause.paused == true)
                 {
                     PlayerCamera.enabled = false;
+                    HexagonCamera.enabled = false;
                     if(options.Clicked == true)
                     {
                         Options_Camera.enabled = true;
@@ -317,15 +401,19 @@ public class Cameracontroller : MonoBehaviour
                 MenuCamera.enabled = false;
                 difficulty.enabled = false;
                 GameOver_Camera.enabled = false;
+                Controls_camera.enabled = false;
+                Controls.Clicked = false;
                 
                 if(pause.paused == false)
                 {
                     Pause_Camera.enabled = false;
                     PlayerCamera.enabled = true;
+                    HexagonCamera.enabled = true;
                 }
                 else if(pause.paused == true)
                 {
                     PlayerCamera.enabled = false;
+                    HexagonCamera.enabled = false;
                     if(options.Clicked == true)
                     {
                         Options_Camera.enabled = true;
@@ -346,6 +434,8 @@ public class Cameracontroller : MonoBehaviour
             GameOver_Camera.enabled = true;
             Options_Camera.enabled = false;
             Pause_Camera.enabled = false;
+            Controls_camera.enabled = false;
+            Controls.Clicked = false;
         }
     }
 }

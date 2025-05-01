@@ -9,6 +9,7 @@ public class Insane_Button : MonoBehaviour
     private Rigidbody2D rb;
     public bool InsaneClicked;
     public Difficulty Difficulty;
+    public Hexagon_Difficulty DIFFICULTY;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,7 @@ public class Insane_Button : MonoBehaviour
         if(InsaneClicked == true)
         {
             Difficulty.insane = true;
+            DIFFICULTY.insane = true;
         }
     }
 }

@@ -2,14 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hard_Button : MonoBehaviour
+public class Quit : MonoBehaviour
 {
 [SerializeField] public GameObject button;
-    public Camera difficulty;
     private Rigidbody2D rb;
-    public bool HardClicked;
-    public Difficulty Difficulty;
-    public Hexagon_Difficulty DIFFICULTY;
+    public bool Clicked;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,15 +15,11 @@ public class Hard_Button : MonoBehaviour
 
     void OnMouseDown()
     {
-        HardClicked = true;
+        Clicked = true;
     }
 
     void Update()
     {
-        if(HardClicked == true)
-        {
-            Difficulty.hard = true;
-            DIFFICULTY.hard = true;
-        }
+        
     }
 }

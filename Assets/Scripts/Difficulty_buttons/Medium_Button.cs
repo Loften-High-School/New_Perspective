@@ -9,6 +9,7 @@ public class Medium_Button : MonoBehaviour
     private Rigidbody2D rb;
     public bool MediumClicked;
     public Difficulty Difficulty;
+    public Hexagon_Difficulty DIFFICULTY;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,7 @@ public class Medium_Button : MonoBehaviour
         if(MediumClicked == true)
         {
             Difficulty.medium = true;
+            DIFFICULTY.medium = true;
         }
     }
 }

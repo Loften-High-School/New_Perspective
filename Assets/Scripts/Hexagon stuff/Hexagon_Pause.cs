@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pause : MonoBehaviour
+public class Hexagon_Pause : MonoBehaviour
 {
     private Rigidbody2D rb;
     public bool paused;
-    public Movement movement;
-    public Difficulty difficulty;
+    public Hexagon hexagon;
+    public Hexagon_Difficulty difficulty;
     
     // Start is called before the first frame update
     void Start()
@@ -33,7 +33,7 @@ public class Pause : MonoBehaviour
         
         if(paused == false)
         {
-            movement.enabled = true;
+            hexagon.enabled = true;
             rb.constraints = RigidbodyConstraints2D.None;
             if(difficulty.easy|difficulty.medium|difficulty.hard == true)
             {

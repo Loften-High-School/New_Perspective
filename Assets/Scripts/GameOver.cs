@@ -7,6 +7,7 @@ public class GameOver : MonoBehaviour
 {
     public bool isAlive;
     public int restart;
+    public Quit quit;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,11 @@ public class GameOver : MonoBehaviour
         {
             Time.timeScale = 1f;
             SceneManager.LoadScene(restart);
+        }
+
+        if(quit.Clicked == true)
+        {
+            Application.Quit();
         }
     }
 }
