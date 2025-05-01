@@ -25,12 +25,14 @@ public class Hexagon : MonoBehaviour
         {
           transform.position = new Vector3(teleport_spot.transform.position.x, teleport_spot.transform.position.y, 0f);
         }
+        lastTeleportTime = Time.time; // Update last teleport time
+        teleportCooldown = 5f;
     }
 
 
 
     public GameObject teleport_spot;
-    public float teleportCooldown;
+    [SerializeField] public float teleportCooldown = 5f;
     public bool ability_ready;
     public bool teleported;
     public bool jumped;
@@ -57,23 +59,36 @@ public class Hexagon : MonoBehaviour
 
     public Hexagon_Pause pause;
     
-
     
     // Update is called once per frame
     void Update()
     {
+        if(teleportCooldown > 0)
+        {
+          ability_ready = false;
+        }
+        else if(teleportCooldown < 0)
+        {
+          ability_ready = true;
+        }
+
+
         
-        if ((ability_ready == true) && (teleported == false) && (jumped == true) && (isGrounded == false))
+        if ((Input.GetKeyDown(KeyCode.UpArrow))|(Input.GetKeyDown(KeyCode.Space))|(Input.GetKeyDown(KeyCode.W)) && (ability_ready == true) && (teleported == false) && (jumped == true) && (isGrounded == false))
         {
             // Ensure the cooldown has passed since the last teleport
-            if (Time.time - lastTeleportTime >= teleportCooldown)
+            if (Time.time - lastTeleportTime > teleportCooldown)
             {
                 {
-                
                 Teleport();
-                lastTeleportTime = Time.time; // Update last teleport time
+                ability_ready = false;
                 }
             }
+        }
+
+        if((ability_ready == false) && (Time.time - lastTeleportTime > teleportCooldown))
+        {
+          ability_ready = true;
         }
         
         
