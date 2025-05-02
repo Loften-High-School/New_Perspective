@@ -28,11 +28,17 @@ public class teleporter : MonoBehaviour
 
             if(hexagon.horizontalMove == -1)
             {
-                transform.position = new Vector3(targetObject.transform.position.x - targetDistance, transform.position.y, transform.position.z);
+                transform.position = new Vector3(targetObject.transform.position.x - targetDistance, targetObject.transform.position.y, targetObject.transform.position.z);
             }
             else if(hexagon.horizontalMove == 1)
             {
-                transform.position = new Vector3(targetObject.transform.position.x + targetDistance, transform.position.y, transform.position.z);
+                transform.position = new Vector3(targetObject.transform.position.x + targetDistance, targetObject.transform.position.y, targetObject.transform.position.z);
+            }
+            
+            
+            if(hexagon.horizontalMove == 0)
+            {
+                transform.position = new Vector3(transform.position.x, targetObject.transform.position.y, transform.position.z);
             }
         }
     

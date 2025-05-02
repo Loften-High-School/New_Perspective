@@ -7,18 +7,14 @@ public class Shape_Changer : MonoBehaviour
     
     public GameObject Player;
     public GameObject Hexagon;
-    public SpriteRenderer player;
-    public SpriteRenderer hexagon;
-    public BoxCollider2D _player;
-    public PolygonCollider2D _hexagon;
-    public Movement movement;
-    public Hexagon _Hexagon;
     public Button_Default Hexagon_Button;
     public Button_Default Square_Button;
-    public Rigidbody2D PLAYER;
-    public Rigidbody2D HEXAGON;
     //public GameObject Triangle;
     //public GameObject Circle;
+    public Movement movement;
+    public Hexagon hexagon;
+    public Difficulty difficulty;
+    public Hexagon_Difficulty Hexagon_Difficulty;
     
     // Start is called before the first frame update
     void Start()
@@ -32,27 +28,21 @@ public class Shape_Changer : MonoBehaviour
         if(Square_Button.clicked == true)
         {
             Debug.Log("Square has been chosen");
-            player.enabled = true;
-            _player.enabled = true;
-            movement.enabled = true;
+            Hexagon.transform.position = new Vector3 (599.6f, 27.7f, 0f);
             hexagon.enabled = false;
-            _hexagon.enabled = false;
-            _Hexagon.enabled = false;
-            HEXAGON.constraints= RigidbodyConstraints2D.FreezeRotation;
-            HEXAGON.constraints= RigidbodyConstraints2D.FreezePosition;
+            Hexagon_Difficulty.enabled = false;
+            difficulty.enabled = true;
+            Hexagon_Button.clicked = false;
         }
 
         if(Hexagon_Button.clicked == true)
         {
             Debug.Log("Hexagon has been chosen");
-            player.enabled = false;
-            _player.enabled = false;
+            Player.transform.position = new Vector3 (599.6f, 27.7f, 0f);
             movement.enabled = false;
-            hexagon.enabled = true;
-            _hexagon.enabled = true;
-            _Hexagon.enabled = true;
-            PLAYER.constraints= RigidbodyConstraints2D.FreezeRotation;
-            PLAYER.constraints= RigidbodyConstraints2D.FreezePosition;
+            difficulty.enabled = false;
+            Hexagon_Difficulty.enabled = true;
+            Square_Button.clicked = false;
         }
     }
 }

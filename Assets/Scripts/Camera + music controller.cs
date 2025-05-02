@@ -33,6 +33,8 @@ public class Cameracontroller : MonoBehaviour
     public Back_button _Back;
     public Option_button Controls;
     public Button_Default Shape_Button;
+    public Button_Default Square_Button;
+    public Button_Default Hexagon_Button;
     // Start is called before the first frame update
     void Start()
     {
@@ -91,27 +93,35 @@ public class Cameracontroller : MonoBehaviour
                 Shape_Button.clicked = false;
             }
 
+            if(Square_Button.clicked == true)
+            {
+                PlayerCamera.enabled = true;
+                HexagonCamera.enabled = false;
+            }
+
+            if(Hexagon_Button.clicked == true)
+            {
+                PlayerCamera.enabled = false;
+                HexagonCamera.enabled = true;
+            }
+
             if(home.clicked == true)
             {
+                Easy.enabled = false;
+                Medium.enabled = false;
+                Hard.enabled = false;
+                Insane.enabled = false;
                 MenuCamera.enabled = true;
                 PlayerCamera.enabled = false;
                 HexagonCamera.enabled = false;
-                difficulty.enabled = false;
-                Difficulty.easy = false;
-                Difficulty.medium = false;
-                Difficulty.hard = false;
-                Difficulty.insane = false;
-                GameOver_Camera.enabled = false;
-                Options_Camera.enabled = false;
+                Play.Clicked = false;
                 Options.Clicked = false;
-                options.Clicked = false;
                 Back.Clicked = false;
+                _back.Clicked = false;
+                _Back.Clicked = false;
+                back.Clicked = false;
                 Pause_Camera.enabled = false;
                 pause.paused = false;
-                Controls_camera.enabled = false;
-                Controls.Clicked = false;
-                Shape_Camera.enabled = false;
-                Shape_Button.clicked = false;
             }
 
             if(pause.paused == true)
@@ -240,8 +250,6 @@ public class Cameracontroller : MonoBehaviour
             if(Controls.Clicked == true)
             {
                 MenuCamera.enabled = false;
-                PlayerCamera.enabled = false;
-                HexagonCamera.enabled = false;
                 difficulty.enabled = false;
                 GameOver_Camera.enabled = false;
                 Options_Camera.enabled = false;
@@ -260,8 +268,6 @@ public class Cameracontroller : MonoBehaviour
             if(Shape_Button.clicked == true)
             {
                 MenuCamera.enabled = false;
-                PlayerCamera.enabled = false;
-                HexagonCamera.enabled = false;
                 difficulty.enabled = false;
                 GameOver_Camera.enabled = false;
                 Options_Camera.enabled = false;
@@ -355,11 +361,29 @@ public class Cameracontroller : MonoBehaviour
                 Controls_camera.enabled = false;
                 Controls.Clicked = false;
                 
+                if(Square_Button.clicked == true)
+                {
+                    PlayerCamera.enabled = true;
+                    HexagonCamera.enabled = false;
+                }
+                else if(Hexagon_Button.clicked == true)
+                {
+                    HexagonCamera.enabled = true;
+                    PlayerCamera.enabled = false;
+                }
+
+                if((Square_Button.clicked == true) && (PlayerCamera.enabled == false))
+                {
+                    PlayerCamera.enabled = true;
+                }
+                else if((Hexagon_Button.clicked == true) && (HexagonCamera.enabled == false))
+                {
+                    HexagonCamera.enabled = true;
+                }
+                
                 if(pause.paused == false)
                 {
                     Pause_Camera.enabled = false;
-                    PlayerCamera.enabled = true;
-                    HexagonCamera.enabled = true;
                 }
                 else if(pause.paused == true)
                 {
@@ -370,6 +394,7 @@ public class Cameracontroller : MonoBehaviour
                         Options_Camera.enabled = true;
                     }
                 }
+
             }
 
             if (Difficulty.medium == true)
