@@ -12,6 +12,7 @@ public class Cameracontroller : MonoBehaviour
     public Camera Options_Camera;
     public Camera Pause_Camera;
     public Camera Controls_camera;
+    public Camera Shape_Camera;
     public Difficulty Difficulty;
     public menu Play;
     public GameOver gameOver;
@@ -29,7 +30,9 @@ public class Cameracontroller : MonoBehaviour
     public Home home;
     public Pause pause;
     public Back_button _back;
+    public Back_button _Back;
     public Option_button Controls;
+    public Button_Default Shape_Button;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,16 +48,19 @@ public class Cameracontroller : MonoBehaviour
         GameOver_Camera.enabled = false;
         Options_Camera.enabled = false;
         Controls_camera.enabled = false;
+        Shape_Camera.enabled = false;
         Play.Clicked = false;
         Options.Clicked = false;
         Back.Clicked = false;
         _back.Clicked = false;
+        _Back.Clicked = false;
         back.Clicked = false;
         Pause_Camera.enabled = false;
         resume.clicked = false;
         home.clicked = false;
         pause.paused = false;
         Controls.Clicked = false;
+        Shape_Button.clicked = false;
     }
 
     // Update is called once per frame
@@ -81,6 +87,8 @@ public class Cameracontroller : MonoBehaviour
                 home.clicked = false;
                 Controls_camera.enabled = false;
                 Controls.Clicked = false;
+                Shape_Camera.enabled = false;
+                Shape_Button.clicked = false;
             }
 
             if(home.clicked == true)
@@ -102,6 +110,8 @@ public class Cameracontroller : MonoBehaviour
                 pause.paused = false;
                 Controls_camera.enabled = false;
                 Controls.Clicked = false;
+                Shape_Camera.enabled = false;
+                Shape_Button.clicked = false;
             }
 
             if(pause.paused == true)
@@ -115,6 +125,8 @@ public class Cameracontroller : MonoBehaviour
                 Pause_Camera.enabled = true;
                 Controls_camera.enabled = false;
                 Controls.Clicked = false;
+                Shape_Camera.enabled = false;
+                Shape_Button.clicked = false;
             }
 
             if(Back.Clicked == true)
@@ -130,10 +142,13 @@ public class Cameracontroller : MonoBehaviour
                     Options.Clicked = false;
                     Play.Clicked = false;
                     back.Clicked = false;
+                    _Back.Clicked = false;
                     Back.Clicked = false;
                     Pause_Camera.enabled = false;
                     Controls_camera.enabled = false;
                     Controls.Clicked = false;
+                    Shape_Camera.enabled = false;
+                    Shape_Button.clicked = false;
                 }
                 
                 if(options.Clicked == true)
@@ -147,10 +162,13 @@ public class Cameracontroller : MonoBehaviour
                     options.Clicked = false;
                     Play.Clicked = false;
                     back.Clicked = false;
+                    _Back.Clicked = false;
                     Back.Clicked = false;
                     Pause_Camera.enabled = true;
                     Controls_camera.enabled = false;
                     Controls.Clicked = false;
+                    Shape_Camera.enabled = false;
+                    Shape_Button.clicked = false;
                 }
             }
 
@@ -166,10 +184,13 @@ public class Cameracontroller : MonoBehaviour
                 options.Clicked = false;
                 Play.Clicked = false;
                 back.Clicked = false;
+                _Back.Clicked = false;
                 Back.Clicked = false;
                 Pause_Camera.enabled = false;
                 Controls_camera.enabled = false;
                 Controls.Clicked = false;
+                Shape_Camera.enabled = false;
+                Shape_Button.clicked = false;
             }
 
             if(_back.Clicked == true)
@@ -185,15 +206,40 @@ public class Cameracontroller : MonoBehaviour
                 Play.Clicked = false;
                 back.Clicked = false;
                 _back.Clicked = false;
+                _Back.Clicked = false;
                 Back.Clicked = false;
                 Pause_Camera.enabled = false;
                 Controls_camera.enabled = false;
                 Controls.Clicked = false;
+                Shape_Camera.enabled = false;
+                Shape_Button.clicked = false;
+            }
+
+            if(_Back.Clicked == true)
+            {
+                MenuCamera.enabled = true;
+                PlayerCamera.enabled = false;
+                HexagonCamera.enabled = false;
+                difficulty.enabled = false;
+                GameOver_Camera.enabled = false;
+                Options_Camera.enabled = false;
+                Options.Clicked = false;
+                options.Clicked = false;
+                Play.Clicked = false;
+                back.Clicked = false;
+                _back.Clicked = false;
+                _Back.Clicked = false;
+                Back.Clicked = false;
+                Pause_Camera.enabled = false;
+                Controls_camera.enabled = false;
+                Controls.Clicked = false;
+                Shape_Camera.enabled = false;
+                Shape_Button.clicked = false;
             }
 
             if(Controls.Clicked == true)
             {
-                MenuCamera.enabled = true;
+                MenuCamera.enabled = false;
                 PlayerCamera.enabled = false;
                 HexagonCamera.enabled = false;
                 difficulty.enabled = false;
@@ -207,6 +253,28 @@ public class Cameracontroller : MonoBehaviour
                 Back.Clicked = false;
                 Pause_Camera.enabled = false;
                 Controls_camera.enabled = true;
+                Shape_Camera.enabled = false;
+                Shape_Button.clicked = false;
+            }
+
+            if(Shape_Button.clicked == true)
+            {
+                MenuCamera.enabled = false;
+                PlayerCamera.enabled = false;
+                HexagonCamera.enabled = false;
+                difficulty.enabled = false;
+                GameOver_Camera.enabled = false;
+                Options_Camera.enabled = false;
+                Options.Clicked = false;
+                options.Clicked = false;
+                Play.Clicked = false;
+                back.Clicked = false;
+                _back.Clicked = false;
+                Back.Clicked = false;
+                Pause_Camera.enabled = false;
+                Controls_camera.enabled = false;
+                Shape_Camera.enabled = true;
+                Shape_Button.clicked = false;
             }
 
             if(Options.Clicked == true && (Back.Clicked == false))
@@ -223,6 +291,8 @@ public class Cameracontroller : MonoBehaviour
                 Pause_Camera.enabled = false;
                 Controls_camera.enabled = false;
                 Controls.Clicked = false;
+                Shape_Camera.enabled = false;
+                Shape_Button.clicked = false;
             }
 
             if(options.Clicked == true && (Back.Clicked == false))
@@ -239,6 +309,8 @@ public class Cameracontroller : MonoBehaviour
                 Pause_Camera.enabled = false;
                 Controls_camera.enabled = false;
                 Controls.Clicked = false;
+                Shape_Camera.enabled = false;
+                Shape_Button.clicked = false;
             }
 
             if(resume.clicked == true)
@@ -255,6 +327,8 @@ public class Cameracontroller : MonoBehaviour
                 pause.paused = false;
                 Controls_camera.enabled = false;
                 Controls.Clicked = false;
+                Shape_Camera.enabled = false;
+                Shape_Button.clicked = false;
             }
         
             if (Difficulty.easy == true)
@@ -436,6 +510,8 @@ public class Cameracontroller : MonoBehaviour
             Pause_Camera.enabled = false;
             Controls_camera.enabled = false;
             Controls.Clicked = false;
+            Shape_Camera.enabled = false;
+            Shape_Button.clicked = false;
         }
     }
 }
