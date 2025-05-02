@@ -33,8 +33,8 @@ public class Cameracontroller : MonoBehaviour
     public Back_button _Back;
     public Option_button Controls;
     public Button_Default Shape_Button;
-    public Button_Default Square_Button;
-    public Button_Default Hexagon_Button;
+    public Selection Square_Button;
+    public Selection Hexagon_Button;
     // Start is called before the first frame update
     void Start()
     {
@@ -93,17 +93,6 @@ public class Cameracontroller : MonoBehaviour
                 Shape_Button.clicked = false;
             }
 
-            if(Square_Button.clicked == true)
-            {
-                PlayerCamera.enabled = true;
-                HexagonCamera.enabled = false;
-            }
-
-            if(Hexagon_Button.clicked == true)
-            {
-                PlayerCamera.enabled = false;
-                HexagonCamera.enabled = true;
-            }
 
             if(home.clicked == true)
             {
@@ -114,7 +103,6 @@ public class Cameracontroller : MonoBehaviour
                 MenuCamera.enabled = true;
                 PlayerCamera.enabled = false;
                 HexagonCamera.enabled = false;
-                Play.Clicked = false;
                 Options.Clicked = false;
                 Back.Clicked = false;
                 _back.Clicked = false;
@@ -122,6 +110,7 @@ public class Cameracontroller : MonoBehaviour
                 back.Clicked = false;
                 Pause_Camera.enabled = false;
                 pause.paused = false;
+                home.clicked = false;
             }
 
             if(pause.paused == true)
@@ -361,25 +350,17 @@ public class Cameracontroller : MonoBehaviour
                 Controls_camera.enabled = false;
                 Controls.Clicked = false;
                 
-                if(Square_Button.clicked == true)
+                if(Square_Button.Square_selected == true)
                 {
                     PlayerCamera.enabled = true;
                     HexagonCamera.enabled = false;
                 }
-                else if(Hexagon_Button.clicked == true)
+                else if(Hexagon_Button.Hexagon_selected == true)
                 {
-                    HexagonCamera.enabled = true;
                     PlayerCamera.enabled = false;
+                    HexagonCamera.enabled = true;
                 }
 
-                if((Square_Button.clicked == true) && (PlayerCamera.enabled == false))
-                {
-                    PlayerCamera.enabled = true;
-                }
-                else if((Hexagon_Button.clicked == true) && (HexagonCamera.enabled == false))
-                {
-                    HexagonCamera.enabled = true;
-                }
                 
                 if(pause.paused == false)
                 {
@@ -421,11 +402,20 @@ public class Cameracontroller : MonoBehaviour
                 Controls_camera.enabled = false;
                 Controls.Clicked = false;
                 
+                if(Square_Button.Square_selected == true)
+                {
+                    PlayerCamera.enabled = true;
+                    HexagonCamera.enabled = false;
+                }
+                else if(Hexagon_Button.Hexagon_selected == true)
+                {
+                    PlayerCamera.enabled = false;
+                    HexagonCamera.enabled = true;
+                }
+
                 if(pause.paused == false)
                 {
                     Pause_Camera.enabled = false;
-                    PlayerCamera.enabled = true;
-                    HexagonCamera.enabled = true;
                 }
                 else if(pause.paused == true)
                 {
@@ -462,11 +452,21 @@ public class Cameracontroller : MonoBehaviour
                 Controls_camera.enabled = false;
                 Controls.Clicked = false;
                 
+                if(Square_Button.Square_selected == true)
+                {
+                    PlayerCamera.enabled = true;
+                    HexagonCamera.enabled = false;
+                }
+                else if(Hexagon_Button.Hexagon_selected == true)
+                {
+                    PlayerCamera.enabled = false;
+                    HexagonCamera.enabled = true;
+                }
+
+                
                 if(pause.paused == false)
                 {
                     Pause_Camera.enabled = false;
-                    PlayerCamera.enabled = true;
-                    HexagonCamera.enabled = true;
                 }
                 else if(pause.paused == true)
                 {
@@ -503,11 +503,21 @@ public class Cameracontroller : MonoBehaviour
                 Controls_camera.enabled = false;
                 Controls.Clicked = false;
                 
+                if(Square_Button.Square_selected == true)
+                {
+                    PlayerCamera.enabled = true;
+                    HexagonCamera.enabled = false;
+                }
+                else if(Hexagon_Button.Hexagon_selected == true)
+                {
+                    PlayerCamera.enabled = false;
+                    HexagonCamera.enabled = true;
+                }
+
+                
                 if(pause.paused == false)
                 {
                     Pause_Camera.enabled = false;
-                    PlayerCamera.enabled = true;
-                    HexagonCamera.enabled = true;
                 }
                 else if(pause.paused == true)
                 {

@@ -16,6 +16,7 @@ public class Difficulty : MonoBehaviour
     public Hard_Button Hard_Button;
     public Insane_Button Insane_Button;
     public Pause pause;
+    public Home home;
 
     
     // Start is called before the first frame update
@@ -74,6 +75,14 @@ public class Difficulty : MonoBehaviour
             rb.constraints = RigidbodyConstraints2D.FreezePositionX;
             rb.constraints = RigidbodyConstraints2D.FreezePositionY;
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        }
+
+        if(home.clicked == true)
+        {
+            easy = false;
+            medium = false;
+            hard = false;
+            insane = false;
         }
     }
 }

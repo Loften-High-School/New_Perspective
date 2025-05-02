@@ -7,8 +7,8 @@ public class Shape_Changer : MonoBehaviour
     
     public GameObject Player;
     public GameObject Hexagon;
-    public Button_Default Hexagon_Button;
-    public Button_Default Square_Button;
+    public Selection Hexagon_Button;
+    public Selection Square_Button;
     //public GameObject Triangle;
     //public GameObject Circle;
     public Movement movement;
@@ -25,7 +25,7 @@ public class Shape_Changer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Square_Button.clicked == true)
+        if(Square_Button.Square_selected == true)
         {
             Debug.Log("Square has been chosen");
             Hexagon.transform.position = new Vector3 (599.6f, 27.7f, 0f);
@@ -33,9 +33,10 @@ public class Shape_Changer : MonoBehaviour
             Hexagon_Difficulty.enabled = false;
             difficulty.enabled = true;
             Hexagon_Button.clicked = false;
+            Hexagon_Button.Hexagon_selected = false;
         }
 
-        if(Hexagon_Button.clicked == true)
+        if(Hexagon_Button.Hexagon_selected == true)
         {
             Debug.Log("Hexagon has been chosen");
             Player.transform.position = new Vector3 (599.6f, 27.7f, 0f);
@@ -43,6 +44,7 @@ public class Shape_Changer : MonoBehaviour
             difficulty.enabled = false;
             Hexagon_Difficulty.enabled = true;
             Square_Button.clicked = false;
+            Square_Button.Square_selected = false;
         }
     }
 }

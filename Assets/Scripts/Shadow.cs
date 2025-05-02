@@ -5,8 +5,8 @@ using UnityEngine;
 public class Shadow : MonoBehaviour
 {
     
-    public Button_Default Square;
-    public Button_Default Hexagon;
+    public Selection Square;
+    public Selection Hexagon;
     
     // Start is called before the first frame update
     void Start()

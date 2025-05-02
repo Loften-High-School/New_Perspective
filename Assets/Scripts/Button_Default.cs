@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Button_Default : MonoBehaviour
 {
-[SerializeField] public GameObject button;
+    [SerializeField] public GameObject button;
     private Rigidbody2D rb;
     public bool clicked;
     // Start is called before the first frame update
