@@ -15,7 +15,6 @@ public class Selection : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Hexagon_selected = false;
         Square_selected = true;
         rb = GetComponent<Rigidbody2D>();
     }
@@ -28,16 +27,19 @@ public class Selection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Hexagon_Button.clicked == true)
+        if((Hexagon_Button.clicked == true) && (Square_selected == true))
         {
             Hexagon_selected = true;
             Square_selected = false;
+            Hexagon_Button.clicked = true;
             Square_Button.clicked = false;
         }
-        else if(Square_Button.clicked == true)
+        
+        if((Square_Button.clicked == true) && (Hexagon_selected == true))
         {
             Hexagon_selected = false;
             Square_selected = true;
+            Square_Button.clicked = true;
             Hexagon_Button.clicked = false;
         }
     }

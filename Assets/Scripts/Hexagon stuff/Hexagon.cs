@@ -21,12 +21,13 @@ public class Hexagon : MonoBehaviour
     {
         teleported = true;
         Vector3 targetPosition = teleport_spot.transform.position;
-        if(ability_ready == true)
+        if((ability_ready == true) && (Time.time > teleportCooldown))
         {
           transform.position = new Vector3(teleport_spot.transform.position.x, teleport_spot.transform.position.y, 0f);
         }
         lastTeleportTime = Time.time; // Update last teleport time
         teleportCooldown = 5f;
+        ability_ready = false;
     }
 
 
@@ -188,6 +189,11 @@ public class Hexagon : MonoBehaviour
               rb.AddForce(Vector3.up * 5 * jumpforce);
               Debug.Log("Key W has been pressed");
             }
+            else if(isGrounded == false)
+            {
+              Teleport();
+              Debug.Log("Player has telported");
+            }
         }
       if (Input.GetKeyDown(KeyCode.UpArrow))     
         {
@@ -202,6 +208,11 @@ public class Hexagon : MonoBehaviour
               Jump_sound.enabled = true;
               rb.AddForce(Vector3.up * 5 * jumpforce);
               Debug.Log("Key Up Arrow has been pressed");
+            }
+            else if(isGrounded == false)
+            {
+              Teleport();
+              Debug.Log("Player has telported");
             }
         }  
       if (Input.GetKeyDown(KeyCode.RightArrow))     

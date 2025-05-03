@@ -29,12 +29,14 @@ public class Cameracontroller : MonoBehaviour
     public Resume resume;
     public Home home;
     public Pause pause;
+    public Hexagon_Pause Pause;
     public Back_button _back;
     public Back_button _Back;
     public Option_button Controls;
     public Button_Default Shape_Button;
     public Selection Square_Button;
     public Selection Hexagon_Button;
+    public Hexagon_Difficulty _difficulty;
     // Start is called before the first frame update
     void Start()
     {
@@ -110,10 +112,12 @@ public class Cameracontroller : MonoBehaviour
                 back.Clicked = false;
                 Pause_Camera.enabled = false;
                 pause.paused = false;
-                home.clicked = false;
+                Pause.paused = false;
+                Difficulty.enabled = true;
+                _difficulty.enabled = true;
             }
 
-            if(pause.paused == true)
+            if((pause.paused == true)|(Pause.paused == true))
             {
                 MenuCamera.enabled = false;
                 PlayerCamera.enabled = false;
@@ -269,7 +273,6 @@ public class Cameracontroller : MonoBehaviour
                 Pause_Camera.enabled = false;
                 Controls_camera.enabled = false;
                 Shape_Camera.enabled = true;
-                Shape_Button.clicked = false;
             }
 
             if(Options.Clicked == true && (Back.Clicked == false))
@@ -311,8 +314,16 @@ public class Cameracontroller : MonoBehaviour
             if(resume.clicked == true)
             {
                 MenuCamera.enabled = false;
-                PlayerCamera.enabled = true;
-                HexagonCamera.enabled = true;
+                if(Square_Button.Square_selected == true)
+                {
+                    PlayerCamera.enabled = true;
+                    HexagonCamera.enabled = false;
+                }
+                else if(Hexagon_Button.Hexagon_selected == true)
+                {
+                    PlayerCamera.enabled = false;
+                    HexagonCamera.enabled = true;
+                }
                 difficulty.enabled = false;
                 GameOver_Camera.enabled = false;
                 Options_Camera.enabled = false;
@@ -320,6 +331,7 @@ public class Cameracontroller : MonoBehaviour
                 Pause_Camera.enabled = false;
                 resume.clicked = false;
                 pause.paused = false;
+                Pause.paused = false;
                 Controls_camera.enabled = false;
                 Controls.Clicked = false;
                 Shape_Camera.enabled = false;
@@ -344,7 +356,6 @@ public class Cameracontroller : MonoBehaviour
                     Hard.enabled = false;
                     Insane.enabled = false;
                 }
-                MenuCamera.enabled = false;
                 difficulty.enabled = false;
                 GameOver_Camera.enabled = false;
                 Controls_camera.enabled = false;
@@ -362,11 +373,11 @@ public class Cameracontroller : MonoBehaviour
                 }
 
                 
-                if(pause.paused == false)
+                if((pause.paused == false)|(Pause.paused == false))
                 {
                     Pause_Camera.enabled = false;
                 }
-                else if(pause.paused == true)
+                else if((pause.paused == true)|(Pause.paused == true))
                 {
                     PlayerCamera.enabled = false;
                     HexagonCamera.enabled = false;
@@ -413,11 +424,11 @@ public class Cameracontroller : MonoBehaviour
                     HexagonCamera.enabled = true;
                 }
 
-                if(pause.paused == false)
+                if((pause.paused == false)|(Pause.paused == false))
                 {
                     Pause_Camera.enabled = false;
                 }
-                else if(pause.paused == true)
+                else if((pause.paused == true)|(Pause.paused == true))
                 {
                     PlayerCamera.enabled = false;
                     HexagonCamera.enabled = false;
@@ -464,11 +475,11 @@ public class Cameracontroller : MonoBehaviour
                 }
 
                 
-                if(pause.paused == false)
+                if((pause.paused == false)|(Pause.paused == false))
                 {
                     Pause_Camera.enabled = false;
                 }
-                else if(pause.paused == true)
+                else if((pause.paused == true)|(Pause.paused == true))
                 {
                     PlayerCamera.enabled = false;
                     HexagonCamera.enabled = false;
@@ -515,11 +526,11 @@ public class Cameracontroller : MonoBehaviour
                 }
 
                 
-                if(pause.paused == false)
+                if((pause.paused == false)|(Pause.paused == false))
                 {
                     Pause_Camera.enabled = false;
                 }
-                else if(pause.paused == true)
+                else if((pause.paused == true)|(Pause.paused == true))
                 {
                     PlayerCamera.enabled = false;
                     HexagonCamera.enabled = false;

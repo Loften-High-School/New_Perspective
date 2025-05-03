@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 2052450208528985771}
   - component: {fileID: 7664832562800172696}
   - component: {fileID: 6525784451143662893}
+  - component: {fileID: 2733742421401790022}
   m_Layer: 0
   m_Name: Hexagon
   m_TagString: Player
@@ -624,7 +625,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd6e636ec15074bf791d8b1ea139e241, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lastTeleportTime: -Infinity
+  teleport_spot: {fileID: 0}
   teleportCooldown: 0
+  ability_ready: 0
+  teleported: 0
   jumped: 0
   hexagon: {fileID: 0}
   gameOver: {fileID: 0}
@@ -697,3 +702,25 @@ MonoBehaviour:
   Hard_pointer: {fileID: 0}
   Insane_pointer: {fileID: 0}
   difficulty: {fileID: 0}
+--- !u!114 &2733742421401790022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2378759527041388329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cccbcb92a384a4ccbb490a2cfa16708f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  Hexagon: {fileID: 2378759527041388329}
+  Hexagon_Button: {fileID: 0}
+  Square_Button: {fileID: 0}
+  movement: {fileID: 0}
+  hexagon: {fileID: 1148402480937305107}
+  difficulty: {fileID: 0}
+  Hexagon_Difficulty: {fileID: 7664832562800172696}
+  x_axis: 604.5
+  y_axis: 18.85

@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 8057198486388022858}
   - component: {fileID: 844155279010360422}
   - component: {fileID: 3239502038847372441}
+  - component: {fileID: 8201008284097079135}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -345,6 +346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a12a4a5f3a09479d844a4d66b55ee15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movement: {fileID: 0}
   gameOver: {fileID: 0}
   maxSpeed: 5
   force: 3
@@ -356,6 +358,7 @@ MonoBehaviour:
   horizontalMove: 0
   Moving: 0
   animator: {fileID: 2736782941464185337}
+  pause: {fileID: 0}
 --- !u!114 &8435964297230680591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -411,6 +414,8 @@ MonoBehaviour:
   Medium_Button: {fileID: 0}
   Hard_Button: {fileID: 0}
   Insane_Button: {fileID: 0}
+  pause: {fileID: 0}
+  home: {fileID: 0}
 --- !u!82 &844155279010360422
 AudioSource:
   m_ObjectHideFlags: 0
@@ -520,3 +525,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   paused: 0
+  movement: {fileID: 0}
+  difficulty: {fileID: 0}
+--- !u!114 &8201008284097079135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3610454034184928719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cccbcb92a384a4ccbb490a2cfa16708f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 3610454034184928719}
+  Hexagon: {fileID: 0}
+  Hexagon_Button: {fileID: 0}
+  Square_Button: {fileID: 0}
+  movement: {fileID: 2507626727612141562}
+  hexagon: {fileID: 0}
+  difficulty: {fileID: 8057198486388022858}
+  Hexagon_Difficulty: {fileID: 0}
+  x_axis: 606.74
+  y_axis: 18.85

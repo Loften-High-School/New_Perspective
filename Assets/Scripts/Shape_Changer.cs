@@ -15,36 +15,38 @@ public class Shape_Changer : MonoBehaviour
     public Hexagon hexagon;
     public Difficulty difficulty;
     public Hexagon_Difficulty Hexagon_Difficulty;
+    private Rigidbody2D rb;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Square_Button.Square_selected == true)
+        if((Square_Button.Square_selected == true) && (Hexagon_Button.Hexagon_selected == false))
         {
             Debug.Log("Square has been chosen");
-            Hexagon.transform.position = new Vector3 (599.6f, 27.7f, 0f);
+            rb.constraints = RigidbodyConstraints2D.None;
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             hexagon.enabled = false;
             Hexagon_Difficulty.enabled = false;
             difficulty.enabled = true;
-            Hexagon_Button.clicked = false;
-            Hexagon_Button.Hexagon_selected = false;
+            movement.enabled = true;
         }
 
-        if(Hexagon_Button.Hexagon_selected == true)
+        if((Hexagon_Button.Hexagon_selected == true) && (Square_Button.Square_selected == false))
         {
             Debug.Log("Hexagon has been chosen");
-            Player.transform.position = new Vector3 (599.6f, 27.7f, 0f);
+            rb.constraints = RigidbodyConstraints2D.None;
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             movement.enabled = false;
             difficulty.enabled = false;
             Hexagon_Difficulty.enabled = true;
-            Square_Button.clicked = false;
-            Square_Button.Square_selected = false;
+            hexagon.enabled = true;
         }
+
     }
 }

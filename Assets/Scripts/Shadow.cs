@@ -20,15 +20,11 @@ public class Shadow : MonoBehaviour
         if(Square.clicked == true)
         {
             transform.position = new Vector3(-609f, -455f, -31f);
-            Hexagon.clicked = false;
-            Square.clicked = false;
         }
 
         if(Hexagon.clicked == true)
         {
             transform.position = new Vector3(-519f, -455f, -31f);
-            Square.clicked = false;
-            Hexagon.clicked = false;
         }
     }
 }

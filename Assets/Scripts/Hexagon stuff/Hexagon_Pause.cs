@@ -19,6 +19,9 @@ public class Hexagon_Pause : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+        
+        
         if(Input.GetKeyDown(KeyCode.Tab))
         {
             Debug.Log("Game has been paused");

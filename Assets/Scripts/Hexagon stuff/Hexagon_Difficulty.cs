@@ -16,11 +16,16 @@ public class Hexagon_Difficulty : MonoBehaviour
     public Hard_Button Hard_Button;
     public Insane_Button Insane_Button;
     public Hexagon_Pause pause;
+    public Home home;
+    public Animator animator;
+    public float x_axis;
+    public float y_axis;
 
     
     // Start is called before the first frame update
     void Start()
     {
+        animator.enabled = false;
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -34,9 +39,11 @@ public class Hexagon_Difficulty : MonoBehaviour
             hard = false;
             insane = false;
             transform.position = new Vector3 (1.2f, -1.66f, 0f);
+            transform.rotation = Quaternion.Euler(0f, 0f, 0f);
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             Debug.Log("Easy Mode selected");
             Easy_Button.EasyClicked = false;
+            animator.enabled = true;
         }
         if(medium == true && Medium_Button.MediumClicked == true)
         {
@@ -44,9 +51,11 @@ public class Hexagon_Difficulty : MonoBehaviour
             hard = false;
             insane = false;
             transform.position = new Vector3 (1.2f, 141.88f, 0f);
+            transform.rotation = Quaternion.Euler(0f, 0f, 0f);
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             Debug.Log("Medium Mode selected");
             Medium_Button.MediumClicked = false;
+            animator.enabled = true;
         }
         if(hard == true && Hard_Button.HardClicked == true)
         {
@@ -54,9 +63,11 @@ public class Hexagon_Difficulty : MonoBehaviour
             easy = false;
             insane = false;
             transform.position = new Vector3 (-197.57f, 141.88f, 0f);
+            transform.rotation = Quaternion.Euler(0f, 0f, 0f);
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             Debug.Log("Hard Mode selected");
             Hard_Button.HardClicked = false;
+            animator.enabled = true;
         }
         if(insane == true && Insane_Button.InsaneClicked == true)
         {
@@ -64,9 +75,11 @@ public class Hexagon_Difficulty : MonoBehaviour
             hard = false;
             easy = false;
             transform.position = new Vector3 (-197.57f, -1.26f, 0f);
+            transform.rotation = Quaternion.Euler(0f, 0f, 0f);
             rb.constraints = RigidbodyConstraints2D.None;
             Debug.Log("Insane Mode selected");
             Insane_Button.InsaneClicked = false;
+            animator.enabled = true;
         }
 
         if(pause.paused == true)
@@ -74,6 +87,16 @@ public class Hexagon_Difficulty : MonoBehaviour
             rb.constraints = RigidbodyConstraints2D.FreezePositionX;
             rb.constraints = RigidbodyConstraints2D.FreezePositionY;
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        }
+
+        if(home.clicked == true)
+        {
+            easy = false;
+            medium = false;
+            hard = false;
+            insane = false;
+            animator.enabled = false;
+            transform.position = new Vector3 (x_axis, y_axis, 0f);
         }
     }
 }
