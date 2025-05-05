@@ -138,7 +138,7 @@ public class Hexagon : MonoBehaviour
     {
       if (gameOver.isAlive == true)
      { 
-      if (Input.GetKeyDown(KeyCode.D))
+      if ((Input.GetKeyDown(KeyCode.D))|(Input.GetKey(KeyCode.D)))
         {
             rb.velocity = new Vector3(15 * force * horizontalMove, rb.velocity.y, 0);
             rb.AddForce(Vector3.right * force * Time.deltaTime);
@@ -149,7 +149,7 @@ public class Hexagon : MonoBehaviour
         {
           Moving = false;
         }
-      if (Input.GetKeyDown(KeyCode.A))
+      if ((Input.GetKeyDown(KeyCode.A))|(Input.GetKey(KeyCode.A)))
         {
             rb.velocity = new Vector3(15 * force * horizontalMove, rb.velocity.y, 0);
             rb.AddForce(Vector3.left * force * Time.deltaTime);
@@ -215,14 +215,14 @@ public class Hexagon : MonoBehaviour
               Debug.Log("Player has telported");
             }
         }  
-      if (Input.GetKeyDown(KeyCode.RightArrow))     
+      if ((Input.GetKeyDown(KeyCode.RightArrow))|(Input.GetKey(KeyCode.RightArrow)))  
         {
             rb.velocity = new Vector3(15 * force * horizontalMove, rb.velocity.y, 0);
             rb.AddForce(Vector3.right * force * Time.deltaTime);
             Moving = true;
             Debug.Log("Right Arrow Key has been pressed");
         }
-      if (Input.GetKeyDown(KeyCode.LeftArrow))     
+      if ((Input.GetKeyDown(KeyCode.LeftArrow))|(Input.GetKey(KeyCode.LeftArrow)))
         {
             rb.velocity = new Vector3(15 * force * horizontalMove, rb.velocity.y, 0);
             rb.AddForce(Vector3.left * force * Time.deltaTime);
