@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 844155279010360422}
   - component: {fileID: 3239502038847372441}
   - component: {fileID: 8201008284097079135}
+  - component: {fileID: 36615249556481083}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -416,6 +417,9 @@ MonoBehaviour:
   Insane_Button: {fileID: 0}
   pause: {fileID: 0}
   home: {fileID: 0}
+  animator: {fileID: 0}
+  x_axis: 0
+  y_axis: 0
 --- !u!82 &844155279010360422
 AudioSource:
   m_ObjectHideFlags: 0
@@ -547,5 +551,17 @@ MonoBehaviour:
   hexagon: {fileID: 0}
   difficulty: {fileID: 8057198486388022858}
   Hexagon_Difficulty: {fileID: 0}
-  x_axis: 606.74
-  y_axis: 18.85
+--- !u!114 &36615249556481083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3610454034184928719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff3e1843aea284d8e851abc8406dc398, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpForce: 5
+  maxJumps: 2

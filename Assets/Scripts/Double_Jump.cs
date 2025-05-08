@@ -4,30 +4,45 @@ using UnityEngine;
 
 public class Double_Jump : MonoBehaviour
 {
-    public int jumpcount = 0;
-    public bool IsGrounded = false;
-    public float Jumpforce = 5f;
-    public int maxjumps = 2;
+    public int jumpCount = 0;
+    public bool isGrounded = false;
+    public float jumpForce;
+    public int maxJumps = 2;
     private Rigidbody2D rb;
-    
-    
-    // Start is called before the first frame update
+
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D> ();
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
-        
+        if((Input.GetKeyDown(KeyCode.Space)) | (Input.GetKeyDown(KeyCode.W)) | (Input.GetKeyDown(KeyCode.UpArrow)) && ((isGrounded == false) && (jumpCount < maxJumps)))
+        {
+            Jump();
+        }
     }
 
-    void OnCollisionEnter2D(Collision2D collider)
+    void Jump()
+    {
+        rb.velocity = new Vector3(rb.velocity.x, jumpForce, 0);
+        jumpCount++;
+    }
+
+    void OnCollisionEnter2D (Collision2D collider)
     {
         if (collider.gameObject.CompareTag("Ground"))
         {
-            
+            isGrounded = true;
+            jumpCount = 0;
+        }
+    }
+
+    void OnCollisionExit2D (Collision2D collider)
+    {
+        if (collider.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = false;
         }
     }
 }
