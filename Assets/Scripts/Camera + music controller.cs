@@ -1,197 +1,196 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
     [Header("Cameras")]
-    public Camera menu_Camera;
-    public Camera player_Camera;
-    public Camera hexagon_Camera;
-    public Camera difficulty_Camera;
-    public Camera gameOver_Camera;
-    public Camera options_Camera;
-    public Camera pause_Camera;
-    public Camera controls_Camera;
-    public Camera shape_Camera;
+    public Camera MenuCamera;
+    public Camera PlayerCamera;
+    public Camera HexagonCamera;
+    public Camera DifficultyCamera;
+    public Camera GameOver_Camera;
+    public Camera Options_Camera;
+    public Camera Pause_Camera;
+    public Camera Controls_Camera;
+    public Camera Shape_Camera;
 
-    [Header("Audio")]
-    public AudioSource easy, medium, hard, insane, lobby;
-    public Music_Button music;
+    [Header("Audio Sources")]
+    public AudioSource Easy;
+    public AudioSource Medium;
+    public AudioSource Hard;
+    public AudioSource Insane;
+    public AudioSource Lobby;
 
     [Header("UI Elements")]
-    public menu playButton;
-    public Home homeButton;
-    public Resume resumeButton;
-    public Pause pauseFlag;
-    public Hexagon_Pause hexPauseFlag;
-    public Option_button Options_Main;    // main‐menu settings
-    public Option_button Options_Pause;   // pause‐menu settings
-    public List<Back_button> backArrows;  // all back arrows
-    public Option_button controlsButton;
-    public Button_Default shapeButton;
-    public Selection squareButton, hexagonButton;
     public Difficulty difficulty;
+    public menu Play;
+    public GameOver gameOver;
+    public Option_button Options_Main;
+    public Option_button Options_Pause;
+    public Back_button Back_Button;
+    public List<Back_button> _Back_Buttons;
+    public Music_Button music;
+    public Resume resume;
+    public Home home;
+    public Pause pause;
+    public Hexagon_Pause Hexagon_Pause;
+    public Option_button Controls_Button;
+    public Button_Default Shape_Button;
+    public Selection Square_Button;
+    public Selection Hexagon_Button;
     public Hexagon_Difficulty hexagonDifficulty;
-    public GameOver gameOverFlag;
-
-    private bool isInSettingsMenu = false;
-    private bool isInPauseSettings = false;
 
     void Start()
     {
-        lobby.enabled = true;
-        ActivateCamera(menu_Camera);
-        ResetUI();
+        SetAllAudio(false);
+        Lobby.enabled = true;
+
+        EnableOnlyCamera(MenuCamera);
+
+        ResetUIStates();
     }
 
     void Update()
     {
-        if (!gameOverFlag.isAlive)
+        if (gameOver.isAlive)
         {
-            ActivateCamera(gameOver_Camera);
-            return;
-        }
+            if (music.ON < 0) Lobby.enabled = false;
 
-        // Pause toggle
-        if (!pauseFlag.paused && Input.GetKeyDown(KeyCode.Tab))
-        {
-            pauseFlag.paused = hexPauseFlag.paused = true;
-        }
-        else if (pauseFlag.paused && Input.GetKeyDown(KeyCode.Tab))
-        {
-            ResumeFromPause();
-        }
+            if (Play.Clicked) HandlePlayClicked();
+            if (home.clicked) HandleHomeClicked();
 
-        // Resume button
-        if (resumeButton.clicked)
-        {
-            ResumeFromPause();
-            return;
-        }
+            HandlePauseCamera();
 
-        // Home button
-        if (homeButton.clicked)
-        {
-            ActivateCamera(menu_Camera);
-            ResetUI();
-            return;
+            HandleBackButtons();
+            HandleOptionControlsShape();
+            HandleResume();
+            HandleDifficultySelection();
         }
+        else
+        {
+            SetAllAudio(false);
+            EnableOnlyCamera(GameOver_Camera);
+        }
+    }
 
-        // Play button
-        if (playButton.Clicked)
+    void HandlePauseCamera()
+    {
+        if ((pause.paused || Hexagon_Pause.paused) && !Options_Pause.Clicked)
         {
-            ActivateCamera(difficulty_Camera);
-            ResetUI();
-            playButton.Clicked = false;
-            return;
+            Debug.Log("Pause triggered: showing Pause_Camera");
+            EnableOnlyCamera(Pause_Camera);
         }
+    }
 
-        // Settings buttons (main and pause)
-        if (Options_Main.Clicked)
-        {
-            EnterSettings(mainMenu: true);
-            return;
-        }
-        if (Options_Pause.Clicked)
-        {
-            EnterSettings(mainMenu: false);
-            return;
-        }
+    void HandlePlayClicked()
+    {
+        EnableOnlyCamera(DifficultyCamera);
+        ResetUIStates();
+        Play.Clicked = false;
+    }
 
-        // Pause state
-        if (pauseFlag.paused || hexPauseFlag.paused)
-        {
-            if (!isInSettingsMenu)
-                ActivateCamera(pause_Camera);
-            return;
-        }
+    void HandleHomeClicked()
+    {
+        SetAllAudio(false);
+        EnableOnlyCamera(MenuCamera);
+        ResetUIStates();
+        difficulty.enabled = true;
+        hexagonDifficulty.enabled = false;
+        pause.paused = false;
+        Hexagon_Pause.paused = false;
+    }
 
-        // Back arrows
-        if (backArrows.Exists(b => b.Clicked))
+    void HandleBackButtons()
+    {
+        foreach (var back in _Back_Buttons)
         {
-            if (isInSettingsMenu)
+            if (back.Clicked)
             {
-                if (isInPauseSettings)
-                    ActivateCamera(pause_Camera);
-                else
-                    ActivateCamera(menu_Camera);
+                if (Options_Main.Clicked)
+                {
+                    EnableOnlyCamera(MenuCamera);
+                }
+                else if (Options_Pause.Clicked)
+                {
+                    EnableOnlyCamera(Pause_Camera);
+                }
+                ResetUIStates();
+                break;
             }
-            else
-            {
-                ActivateCamera(menu_Camera);
-            }
-            ResetUI();
-            return;
         }
 
-        // Controls and Shape under settings
-        if (controlsButton.Clicked)
+        if (Options_Main.Clicked && !Back_Button.Clicked)
         {
-            ActivateCamera(controls_Camera);
-            ResetUI(keepPause: true);
-            return;
+            EnableOnlyCamera(Options_Camera);
+            ResetUIStates();
         }
-        if (shapeButton.clicked)
+        else if (Options_Pause.Clicked && !Back_Button.Clicked)
         {
-            ActivateCamera(shape_Camera);
-            ResetUI(keepPause: true);
-            return;
+            EnableOnlyCamera(Options_Camera);
+            ResetUIStates();
         }
+    }
 
-        // Difficulty selection
+    void HandleOptionControlsShape()
+    {
+        if (Controls_Button.Clicked)
+        {
+            EnableOnlyCamera(Controls_Camera);
+            ResetUIStates();
+        }
+        else if (Shape_Button.clicked)
+        {
+            EnableOnlyCamera(Shape_Camera);
+            ResetUIStates();
+        }
+    }
+
+    void HandleResume()
+    {
+        if (resume.clicked)
+        {
+            EnableOnlyCamera(null);
+            PlayerCamera.enabled = Square_Button.Square_selected;
+            HexagonCamera.enabled = Hexagon_Button.Hexagon_selected;
+
+            Pause_Camera.enabled = false;
+
+            resume.clicked = false;
+            pause.paused = false;
+            Hexagon_Pause.paused = false;
+        }
+    }
+
+    void HandleDifficultySelection()
+    {
         if (difficulty.easy || difficulty.medium || difficulty.hard || difficulty.insane)
         {
             PlayDifficultyMusic();
-            if (squareButton.Square_selected) ActivateCamera(player_Camera);
-            else if (hexagonButton.Hexagon_selected) ActivateCamera(hexagon_Camera);
+            EnableOnlyCamera(null);
+            PlayerCamera.enabled = Square_Button.Square_selected;
+            HexagonCamera.enabled = Hexagon_Button.Hexagon_selected;
+
+            if (pause.paused || Hexagon_Pause.paused)
+            {
+                PlayerCamera.enabled = false;
+                HexagonCamera.enabled = false;
+                if (Options_Pause.Clicked) Options_Camera.enabled = true;
+            }
+            else
+            {
+                Pause_Camera.enabled = false;
+            }
         }
     }
 
-    void EnterSettings(bool mainMenu)
+    void SetAllAudio(bool state)
     {
-        isInSettingsMenu = true;
-        isInPauseSettings = !mainMenu;
-        ActivateCamera(options_Camera);
-        ResetUI(keepPause: true);
-        if (mainMenu) Options_Main.Clicked = false;
-        else Options_Pause.Clicked = false;
-    }
-
-    void ResumeFromPause()
-    {
-        pauseFlag.paused = hexPauseFlag.paused = false;
-        isInSettingsMenu = false;
-        isInPauseSettings = false;
-        if (squareButton.Square_selected) ActivateCamera(player_Camera);
-        else if (hexagonButton.Hexagon_selected) ActivateCamera(hexagon_Camera);
-        else ActivateCamera(player_Camera);
-        resumeButton.clicked = false;
-    }
-
-    void ActivateCamera(Camera cam)
-    {
-        var cams = new[] { menu_Camera, player_Camera, hexagon_Camera, difficulty_Camera,
-                           gameOver_Camera, options_Camera, pause_Camera,
-                           controls_Camera, shape_Camera };
-        foreach (var c in cams) c.enabled = (c == cam);
-    }
-
-    void ResetUI(bool keepPause = false)
-    {
-        playButton.Clicked = false;
-        Options_Main.Clicked = false;
-        Options_Pause.Clicked = false;
-        foreach (var b in backArrows) b.Clicked = false;
-        resumeButton.clicked = false;
-        homeButton.clicked = false;
-        if (!keepPause) pauseFlag.paused = hexPauseFlag.paused = false;
-        controlsButton.Clicked = false;
-        shapeButton.clicked = false;
-    }
-
-    void SetAllAudio(bool on)
-    {
-        easy.enabled = medium.enabled = hard.enabled = insane.enabled = lobby.enabled = on;
+        Easy.enabled = state;
+        Medium.enabled = state;
+        Hard.enabled = state;
+        Insane.enabled = state;
+        Lobby.enabled = state;
     }
 
     void PlayDifficultyMusic()
@@ -199,10 +198,32 @@ public class CameraController : MonoBehaviour
         SetAllAudio(false);
         if (music.ON > 0)
         {
-            if (difficulty.easy) easy.enabled = true;
-            else if (difficulty.medium) medium.enabled = true;
-            else if (difficulty.hard) hard.enabled = true;
-            else if (difficulty.insane) insane.enabled = true;
+            if (difficulty.easy) Easy.enabled = true;
+            else if (difficulty.medium) Medium.enabled = true;
+            else if (difficulty.hard) Hard.enabled = true;
+            else if (difficulty.insane) Insane.enabled = true;
         }
+    }
+
+    void EnableOnlyCamera(Camera camToEnable)
+    {
+        foreach (Camera cam in new[] { MenuCamera, PlayerCamera, HexagonCamera, DifficultyCamera, GameOver_Camera, Options_Camera, Pause_Camera, Controls_Camera, Shape_Camera })
+        {
+            cam.enabled = cam == camToEnable;
+        }
+    }
+
+    void ResetUIStates()
+    {
+        Play.Clicked = false;
+        Options_Main.Clicked = false;
+        Options_Pause.Clicked = false;
+        foreach (var back in _Back_Buttons) back.Clicked = false;
+        resume.clicked = false;
+        home.clicked = false;
+        pause.paused = false;
+        Hexagon_Pause.paused = false;
+        Controls_Button.Clicked = false;
+        Shape_Button.clicked = false;
     }
 }
