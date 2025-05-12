@@ -72,14 +72,33 @@ public class CameraController : MonoBehaviour
             SetAllAudio(false);
             EnableOnlyCamera(GameOver_Camera);
         }
+
+        if ((pause.paused == true) || (Hexagon_Pause.paused == true))
+        {
+            PlayerCamera.enabled = false;
+            HexagonCamera.enabled = false;
+            EnableOnlyCamera(Pause_Camera);
+            if (Options_Pause.Clicked == true)
+            {
+                EnableOnlyCamera(Options_Camera);
+            }
+        }
+        else
+        {
+            Pause_Camera.enabled = false;
+        }
     }
 
     void HandlePauseCamera()
     {
-        if ((pause.paused || Hexagon_Pause.paused) && !Options_Pause.Clicked)
+        if ((pause.paused == true) || (Hexagon_Pause.paused == true) && (Options_Pause.Clicked == true))
         {
             Debug.Log("Pause triggered: showing Pause_Camera");
             EnableOnlyCamera(Pause_Camera);
+            if(Pause_Camera.enabled == true)
+            {
+                Debug.Log("Pause Camera is on");
+            }
         }
     }
 
@@ -123,12 +142,10 @@ public class CameraController : MonoBehaviour
         if (Options_Main.Clicked && !Back_Button.Clicked)
         {
             EnableOnlyCamera(Options_Camera);
-            ResetUIStates();
         }
         else if (Options_Pause.Clicked && !Back_Button.Clicked)
         {
             EnableOnlyCamera(Options_Camera);
-            ResetUIStates();
         }
     }
 
@@ -164,18 +181,21 @@ public class CameraController : MonoBehaviour
 
     void HandleDifficultySelection()
     {
-        if (difficulty.easy || difficulty.medium || difficulty.hard || difficulty.insane)
+        if ((difficulty.easy == true) || (difficulty.medium == true) || (difficulty.hard == true) || (difficulty.insane == true))
         {
             PlayDifficultyMusic();
             EnableOnlyCamera(null);
             PlayerCamera.enabled = Square_Button.Square_selected;
             HexagonCamera.enabled = Hexagon_Button.Hexagon_selected;
 
-            if (pause.paused || Hexagon_Pause.paused)
+            if ((pause.paused == true) || (Hexagon_Pause.paused == true))
             {
                 PlayerCamera.enabled = false;
                 HexagonCamera.enabled = false;
-                if (Options_Pause.Clicked) Options_Camera.enabled = true;
+                if (Options_Pause.Clicked) 
+                {
+                    Options_Camera.enabled = true;
+                }
             }
             else
             {
@@ -198,10 +218,22 @@ public class CameraController : MonoBehaviour
         SetAllAudio(false);
         if (music.ON > 0)
         {
-            if (difficulty.easy) Easy.enabled = true;
-            else if (difficulty.medium) Medium.enabled = true;
-            else if (difficulty.hard) Hard.enabled = true;
-            else if (difficulty.insane) Insane.enabled = true;
+            if (difficulty.easy == true) 
+            {
+                Easy.enabled = true;
+            }
+            else if (difficulty.medium == true) 
+            {
+                Medium.enabled = true;
+            }
+            else if (difficulty.hard == true)
+            {
+                Hard.enabled = true;
+            }
+            else if (difficulty.insane == true) 
+            {
+                Insane.enabled = true;
+            }
         }
     }
 
