@@ -8,6 +8,7 @@ public class GameOver : MonoBehaviour
     public bool isAlive;
     public int restart;
     public Quit quit;
+    public Camera GameOver_Camera;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,11 @@ public class GameOver : MonoBehaviour
             SceneManager.LoadScene(restart);
         }
 
+        if(isAlive == false)
+        {
+            GameOver_Camera.enabled = true;
+        }
+        
         if(quit.Clicked == true)
         {
             Application.Quit();
