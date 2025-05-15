@@ -45,7 +45,7 @@ public class CameraController : MonoBehaviour
 
     void Start()
     {
-        SetAllAudio(false);
+        
         Lobby.enabled = true;
 
         EnableOnlyCamera(MenuCamera);
@@ -71,7 +71,7 @@ public class CameraController : MonoBehaviour
         }
         else
         {
-            SetAllAudio(false);
+            
             EnableOnlyCamera(GameOver_Camera);
         }
 
@@ -131,7 +131,8 @@ public class CameraController : MonoBehaviour
 
     void HandleHomeClicked()
     {
-        SetAllAudio(false);
+        
+        Lobby.enabled = true;
         EnableOnlyCamera(MenuCamera);
         ResetUIStates();
         difficulty.enabled = true;
@@ -224,6 +225,7 @@ public class CameraController : MonoBehaviour
         if ((difficulty.easy == true) || (difficulty.medium == true) || (difficulty.hard == true) || (difficulty.insane == true))
         {
             PlayDifficultyMusic();
+            Lobby.enabled = false;
             EnableOnlyCamera(null);
             PlayerCamera.enabled = Square_Button.Square_selected;
             HexagonCamera.enabled = Hexagon_Button.Hexagon_selected;
@@ -244,35 +246,26 @@ public class CameraController : MonoBehaviour
         }
     }
 
-    void SetAllAudio(bool state)
-    {
-        Easy.enabled = state;
-        Medium.enabled = state;
-        Hard.enabled = state;
-        Insane.enabled = state;
-        Lobby.enabled = state;
-    }
 
     void PlayDifficultyMusic()
     {
-        SetAllAudio(false);
         if (music.ON > 0)
         {
             if (difficulty.easy == true) 
             {
-                Easy.enabled = true;
+                Debug.Log("Music is on");
             }
             else if (difficulty.medium == true) 
             {
-                Medium.enabled = true;
+                Debug.Log("Music is on");
             }
             else if (difficulty.hard == true)
             {
-                Hard.enabled = true;
+                Debug.Log("Music is on");
             }
             else if (difficulty.insane == true) 
             {
-                Insane.enabled = true;
+                Debug.Log("Music is on");
             }
         }
     }
