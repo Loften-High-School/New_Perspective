@@ -29,9 +29,8 @@ public class CameraController : MonoBehaviour
     public Option_button Options_Main;
     public Option_button Options_Pause;
     public Back_button Back_Button;
-    public Back_button back_Button1;
-    public Back_button back_Button2;
-    public Back_button back_Button3;
+    public Back_button back_Button;
+    public Back_button _back_Button;
     public List<Back_button> _Back_Buttons;
     public Music_Button music;
     public Resume resume;
@@ -46,7 +45,7 @@ public class CameraController : MonoBehaviour
 
     void Start()
     {
-        SetAllAudio(false);
+        
         Lobby.enabled = true;
 
         EnableOnlyCamera(MenuCamera);
@@ -56,17 +55,10 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
-        if(gameOver.isAlive == false)
-        {
-            Debug.Log("You died");
-            EnableOnlyCamera(GameOver_Camera);
-            GameOver_Camera.enabled = true;
-        }
-        
-        if (gameOver.isAlive == true)
+        if (gameOver.isAlive)
         {
             if (music.ON < 0) Lobby.enabled = false;
-            Debug.Log("Music is turned off");
+
             if (Play.Clicked) HandlePlayClicked();
             if (home.clicked) HandleHomeClicked();
 
@@ -76,44 +68,44 @@ public class CameraController : MonoBehaviour
             HandleOptionControlsShape();
             HandleResume();
             HandleDifficultySelection();
+        }
+        else
+        {
+            
+            EnableOnlyCamera(GameOver_Camera);
+        }
 
-            if ((pause.paused == true) || (Hexagon_Pause.paused == true))
+        if ((pause.paused == true) || (Hexagon_Pause.paused == true))
+        {
+            PlayerCamera.enabled = false;
+            HexagonCamera.enabled = false;
+            EnableOnlyCamera(Pause_Camera);
+            if (Options_Pause.Clicked == true)
             {
-                PlayerCamera.enabled = false;
-                HexagonCamera.enabled = false;
-                EnableOnlyCamera(Pause_Camera);
-                if (Options_Pause.Clicked == true)
-                {
-                    EnableOnlyCamera(Options_Camera);
-                    pause.paused = true;
-                    Hexagon_Pause.paused = true;
-                }
+                EnableOnlyCamera(Options_Camera);
+                pause.paused = true;
+                Hexagon_Pause.paused = true;
             }
-            else
-            {
-                Pause_Camera.enabled = false;
-            }
+        }
+        else
+        {
+            Pause_Camera.enabled = false;
+        }
 
-            if((Back_Button.Clicked == true) && (Options_Pause.Clicked == true) && ((pause.paused == true) | (Hexagon_Pause.paused == true)))
-            {
-                EnableOnlyCamera(Pause_Camera);
-                Debug.Log("Player has returned to the pause menu from settings");
-            }
+        if((Back_Button.Clicked == true) && (Options_Pause.Clicked == true) && ((pause.paused == true) | (Hexagon_Pause.paused == true)))
+        {
+            EnableOnlyCamera(Pause_Camera);
+            Debug.Log("Player has returned to the pause menu from settings");
+        }
 
-            if((back_Button1.Clicked == true) | (back_Button2.Clicked == true) | (back_Button3.Clicked == true))
-            {
-                EnableOnlyCamera(MenuCamera);
-            }
+        if(_back_Button.Clicked == true)
+        {
+            EnableOnlyCamera(MenuCamera);
+        }
 
-            if(Options_Main.Clicked == true)
-            {
-                Options_Camera.enabled = true;
-                Debug.Log("Player is in settings");
-                if(Back_Button.Clicked == true)
-                {
-                    Options_Camera.enabled = false;
-                }
-            }
+        if(back_Button.Clicked == true)
+        {
+            EnableOnlyCamera(MenuCamera);
         }
     }
 
@@ -139,7 +131,8 @@ public class CameraController : MonoBehaviour
 
     void HandleHomeClicked()
     {
-        SetAllAudio(false);
+        
+        Lobby.enabled = true;
         EnableOnlyCamera(MenuCamera);
         ResetUIStates();
         difficulty.enabled = true;
@@ -157,24 +150,35 @@ public class CameraController : MonoBehaviour
                 if (Options_Main.Clicked == true)
                 {
                     EnableOnlyCamera(MenuCamera);
-                    Options_Camera.enabled = false;
-                    Debug.Log("Player has returned to the main menu from settings");
                 }
                 else if (Options_Pause.Clicked == true)
                 {
-                    HandlePauseCamera();
                     EnableOnlyCamera(Pause_Camera);
-                    Debug.Log("Player has returned to the pause menu from settings");
-                    HexagonCamera.enabled = false;
-                    PlayerCamera.enabled = false;
+                    pause.paused = true;
+                    Hexagon_Pause.paused = true;
                 }
+                ResetUIStates();
                 break;
             }
 
-            if((back_Button1.Clicked == true) | (back_Button2.Clicked == true) | (back_Button3.Clicked == true))
+            if(_back_Button.Clicked == true)
             {
                 EnableOnlyCamera(MenuCamera);
             }
+
+            if(back_Button.Clicked == true)
+            {
+                EnableOnlyCamera(MenuCamera);
+            }
+        }
+
+        if (Options_Main.Clicked && !Back_Button.Clicked)
+        {
+            EnableOnlyCamera(Options_Camera);
+        }
+        else if (Options_Pause.Clicked && !Back_Button.Clicked)
+        {
+            EnableOnlyCamera(Options_Camera);
         }
     }
 
@@ -184,7 +188,7 @@ public class CameraController : MonoBehaviour
         {
             EnableOnlyCamera(Controls_Camera);
             ResetUIStates();
-            if(back_Button1.Clicked == true)
+            if(back_Button.Clicked == true)
             {
                 EnableOnlyCamera(MenuCamera);
             }
@@ -193,7 +197,7 @@ public class CameraController : MonoBehaviour
         {
             EnableOnlyCamera(Shape_Camera);
             ResetUIStates();
-            if(back_Button2.Clicked == true)
+            if(_back_Button.Clicked == true)
             {
                 EnableOnlyCamera(MenuCamera);
             }
@@ -221,6 +225,7 @@ public class CameraController : MonoBehaviour
         if ((difficulty.easy == true) || (difficulty.medium == true) || (difficulty.hard == true) || (difficulty.insane == true))
         {
             PlayDifficultyMusic();
+            Lobby.enabled = false;
             EnableOnlyCamera(null);
             PlayerCamera.enabled = Square_Button.Square_selected;
             HexagonCamera.enabled = Hexagon_Button.Hexagon_selected;
@@ -241,38 +246,26 @@ public class CameraController : MonoBehaviour
         }
     }
 
-    void SetAllAudio(bool state)
-    {
-        Easy.enabled = state;
-        Medium.enabled = state;
-        Hard.enabled = state;
-        Insane.enabled = state;
-        Lobby.enabled = state;
-    }
 
     void PlayDifficultyMusic()
     {
-        SetAllAudio(false);
-        Debug.Log("All music is turned off");
         if (music.ON > 0)
         {
-            Debug.Log("Music.On is greater than 0");
             if (difficulty.easy == true) 
             {
-                Easy.enabled = true;
+                Debug.Log("Music is on");
             }
             else if (difficulty.medium == true) 
             {
-                Medium.enabled = true;
+                Debug.Log("Music is on");
             }
             else if (difficulty.hard == true)
             {
-                Hard.enabled = true;
-                Debug.Log("Music has been turned on!!!!");
+                Debug.Log("Music is on");
             }
             else if (difficulty.insane == true) 
             {
-                Insane.enabled = true;
+                Debug.Log("Music is on");
             }
         }
     }
