@@ -29,8 +29,9 @@ public class CameraController : MonoBehaviour
     public Option_button Options_Main;
     public Option_button Options_Pause;
     public Back_button Back_Button;
-    public Back_button back_Button;
-    public Back_button _back_Button;
+    public Back_button back_button1;
+    public Back_button back_button2;
+    public Back_button back_button3;
     public List<Back_button> _Back_Buttons;
     public Music_Button music;
     public Resume resume;
@@ -98,12 +99,17 @@ public class CameraController : MonoBehaviour
             Debug.Log("Player has returned to the pause menu from settings");
         }
 
-        if(_back_Button.Clicked == true)
+        if(back_button3.Clicked == true)
         {
             EnableOnlyCamera(MenuCamera);
         }
 
-        if(back_Button.Clicked == true)
+        if(back_button1.Clicked == true)
+        {
+            EnableOnlyCamera(MenuCamera);
+        }
+
+        if(back_button2.Clicked == true)
         {
             EnableOnlyCamera(MenuCamera);
         }
@@ -132,13 +138,19 @@ public class CameraController : MonoBehaviour
     void HandleHomeClicked()
     {
         
+        ResetUIStates();
         Lobby.enabled = true;
         EnableOnlyCamera(MenuCamera);
-        ResetUIStates();
-        difficulty.enabled = true;
-        hexagonDifficulty.enabled = false;
-        pause.paused = false;
-        Hexagon_Pause.paused = false;
+        MenuCamera.enabled = true;
+        difficulty.easy = false;
+        difficulty.medium = false;
+        difficulty.hard = false;
+        difficulty.insane = false;
+        hexagonDifficulty.easy = false;
+        hexagonDifficulty.medium = false;
+        hexagonDifficulty.hard = false;
+        hexagonDifficulty.insane = false;
+        Debug.Log("Player has returned home");
     }
 
     void HandleBackButtons()
@@ -161,12 +173,17 @@ public class CameraController : MonoBehaviour
                 break;
             }
 
-            if(_back_Button.Clicked == true)
+            if(back_button3.Clicked == true)
             {
                 EnableOnlyCamera(MenuCamera);
             }
 
-            if(back_Button.Clicked == true)
+            if(back_button2.Clicked == true)
+            {
+                EnableOnlyCamera(MenuCamera);
+            }
+
+            if(back_button1.Clicked == true)
             {
                 EnableOnlyCamera(MenuCamera);
             }
@@ -188,7 +205,7 @@ public class CameraController : MonoBehaviour
         {
             EnableOnlyCamera(Controls_Camera);
             ResetUIStates();
-            if(back_Button.Clicked == true)
+            if(back_button2.Clicked == true)
             {
                 EnableOnlyCamera(MenuCamera);
             }
@@ -197,7 +214,7 @@ public class CameraController : MonoBehaviour
         {
             EnableOnlyCamera(Shape_Camera);
             ResetUIStates();
-            if(_back_Button.Clicked == true)
+            if(back_button3.Clicked == true)
             {
                 EnableOnlyCamera(MenuCamera);
             }
