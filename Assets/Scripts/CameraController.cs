@@ -58,8 +58,15 @@ public class CameraController : MonoBehaviour
     {
         if (gameOver.isAlive)
         {
-            if (music.ON < 0) Lobby.enabled = false;
-
+            if (music.ON < 0) 
+            {
+                Lobby.enabled = false;
+                Easy.enabled = false;
+                Medium.enabled = false;
+                Hard.enabled = false;
+                Insane.enabled = false;
+            }
+            
             if (Play.Clicked) HandlePlayClicked();
             if (home.clicked) HandleHomeClicked();
 
@@ -76,6 +83,16 @@ public class CameraController : MonoBehaviour
             EnableOnlyCamera(GameOver_Camera);
         }
 
+        if(Options_Main.Clicked == true)
+        {
+            EnableOnlyCamera(Options_Camera);
+            MenuCamera.enabled = false;
+            Options_Camera.enabled = true;
+            back_button1.Clicked = false;
+            back_button2.Clicked = false;
+            back_button3.Clicked = false;
+        }
+        
         if ((pause.paused == true) || (Hexagon_Pause.paused == true))
         {
             PlayerCamera.enabled = false;
