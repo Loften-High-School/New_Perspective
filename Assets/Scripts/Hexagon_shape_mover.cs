@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class shape_mover : MonoBehaviour
+public class Hexagon_shape_mover : MonoBehaviour
 {
-    public Hexagon_Pause Hexagon_Pause;
     public Pause pause;
+    public Hexagon_Pause Hexagon_Pause;
     public float x;
     public float y;
     
