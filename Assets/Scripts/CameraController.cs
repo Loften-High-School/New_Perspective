@@ -14,6 +14,7 @@ public class CameraController : MonoBehaviour
     public Camera Pause_Camera;
     public Camera Controls_Camera;
     public Camera Shape_Camera;
+    public Camera CircleCamera;
 
     [Header("Audio Sources")]
     public AudioSource Easy;
@@ -24,6 +25,8 @@ public class CameraController : MonoBehaviour
 
     [Header("UI Elements")]
     public Difficulty difficulty;
+    public Circle_Difficulty circle_difficulty;
+    public Circle_Pause circle_pause;
     public menu Play;
     public GameOver gameOver;
     public Option_button Options_Main;
@@ -42,6 +45,7 @@ public class CameraController : MonoBehaviour
     public Button_Default Shape_Button;
     public Selection Square_Button;
     public Selection Hexagon_Button;
+    public Selection Circle_Button;
     public Hexagon_Difficulty hexagonDifficulty;
 
     void Start()
@@ -93,16 +97,18 @@ public class CameraController : MonoBehaviour
             back_button3.Clicked = false;
         }
         
-        if ((pause.paused == true) || (Hexagon_Pause.paused == true))
+        if ((pause.paused == true) || (Hexagon_Pause.paused == true) || (circle_pause.paused == true))
         {
             PlayerCamera.enabled = false;
             HexagonCamera.enabled = false;
+            CircleCamera.enabled = false;
             EnableOnlyCamera(Pause_Camera);
             if (Options_Pause.Clicked == true)
             {
                 EnableOnlyCamera(Options_Camera);
                 pause.paused = true;
                 Hexagon_Pause.paused = true;
+                circle_pause.paused = true;
             }
         }
         else
@@ -110,7 +116,7 @@ public class CameraController : MonoBehaviour
             Pause_Camera.enabled = false;
         }
 
-        if((Back_Button.Clicked == true) && (Options_Pause.Clicked == true) && ((pause.paused == true) | (Hexagon_Pause.paused == true)))
+        if((Back_Button.Clicked == true) && (Options_Pause.Clicked == true) && ((pause.paused == true) | (Hexagon_Pause.paused == true) | (circle_pause.paused == true)))
         {
             EnableOnlyCamera(Pause_Camera);
             Debug.Log("Player has returned to the pause menu from settings");
@@ -134,7 +140,7 @@ public class CameraController : MonoBehaviour
 
     void HandlePauseCamera()
     {
-        if ((pause.paused == true) || (Hexagon_Pause.paused == true) && (Options_Pause.Clicked == true))
+        if ((pause.paused == true) || (Hexagon_Pause.paused == true) || (circle_pause.paused == true) && (Options_Pause.Clicked == true))
         {
             Debug.Log("Pause triggered: showing Pause_Camera");
             EnableOnlyCamera(Pause_Camera);
@@ -154,7 +160,7 @@ public class CameraController : MonoBehaviour
 
     void HandleHomeClicked()
     {
-        
+
         ResetUIStates();
         Lobby.enabled = true;
         EnableOnlyCamera(MenuCamera);
@@ -167,7 +173,12 @@ public class CameraController : MonoBehaviour
         hexagonDifficulty.medium = false;
         hexagonDifficulty.hard = false;
         hexagonDifficulty.insane = false;
+        circle_difficulty.easy = false;
+        circle_difficulty.medium = false;
+        circle_difficulty.hard = false;
+        circle_difficulty.insane = false;
         Debug.Log("Player has returned home");
+        EnableOnlyCamera(MenuCamera);
     }
 
     void HandleBackButtons()
@@ -185,6 +196,7 @@ public class CameraController : MonoBehaviour
                     EnableOnlyCamera(Pause_Camera);
                     pause.paused = true;
                     Hexagon_Pause.paused = true;
+                    circle_pause.paused = true;
                 }
                 ResetUIStates();
                 break;
@@ -245,12 +257,14 @@ public class CameraController : MonoBehaviour
             EnableOnlyCamera(null);
             PlayerCamera.enabled = Square_Button.Square_selected;
             HexagonCamera.enabled = Hexagon_Button.Hexagon_selected;
+            CircleCamera.enabled = Circle_Button.Circle_selected;
 
             Pause_Camera.enabled = false;
 
             resume.clicked = false;
             pause.paused = false;
             Hexagon_Pause.paused = false;
+            circle_pause.paused = false;
         }
     }
 
@@ -263,12 +277,14 @@ public class CameraController : MonoBehaviour
             EnableOnlyCamera(null);
             PlayerCamera.enabled = Square_Button.Square_selected;
             HexagonCamera.enabled = Hexagon_Button.Hexagon_selected;
+            CircleCamera.enabled = Circle_Button.Circle_selected;
 
-            if ((pause.paused == true) || (Hexagon_Pause.paused == true))
+            if ((pause.paused == true) || (Hexagon_Pause.paused == true) || (circle_pause.paused == true))
             {
                 PlayerCamera.enabled = false;
                 HexagonCamera.enabled = false;
-                if (Options_Pause.Clicked) 
+                CircleCamera.enabled = false;
+                if (Options_Pause.Clicked)
                 {
                     Options_Camera.enabled = true;
                 }
