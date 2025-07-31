@@ -12,8 +12,6 @@ GameObject:
   - component: {fileID: 5721090812382051363}
   - component: {fileID: 6701871530565879289}
   - component: {fileID: 4720246991522949846}
-  - component: {fileID: 7936377382476262430}
-  - component: {fileID: 8160927861987452418}
   - component: {fileID: 7427161758324076633}
   - component: {fileID: 4797657214792242338}
   - component: {fileID: 8487146094319112568}
@@ -173,101 +171,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!20 &7936377382476262430
-Camera:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8261544600556248522}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.09433961, g: 0.07075471, b: 0.07075471, a: 1}
-  m_projectionMatrixMode: 1
-  m_GateFitMode: 2
-  m_FOVAxisMode: 0
-  m_Iso: 200
-  m_ShutterSpeed: 0.005
-  m_Aperture: 16
-  m_FocusDistance: 10
-  m_FocalLength: 20.784609
-  m_BladeCount: 5
-  m_Curvature: {x: 2, y: 11}
-  m_BarrelClipping: 0.25
-  m_Anamorphism: 0
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: -21
-  far clip plane: 21
-  field of view: 60.000004
-  orthographic: 1
-  orthographic size: 15
-  m_Depth: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
---- !u!114 &8160927861987452418
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8261544600556248522}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
-  m_CameraType: 0
-  m_Cameras: []
-  m_RendererIndex: -1
-  m_VolumeLayerMask:
-    serializedVersion: 2
-    m_Bits: 1
-  m_VolumeTrigger: {fileID: 0}
-  m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
-  m_Antialiasing: 0
-  m_AntialiasingQuality: 2
-  m_StopNaN: 0
-  m_Dithering: 0
-  m_ClearDepth: 1
-  m_AllowXRRendering: 0
-  m_AllowHDROutput: 1
-  m_UseScreenCoordOverride: 0
-  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
-  m_RequiresDepthTexture: 0
-  m_RequiresColorTexture: 0
-  m_Version: 2
-  m_TaaSettings:
-    quality: 3
-    frameInfluence: 0.1
-    jitterScale: 1
-    mipBias: 0
-    varianceClampScale: 0.9
-    contrastAdaptiveSharpening: 0
 --- !u!82 &7427161758324076633
 AudioSource:
   m_ObjectHideFlags: 0
@@ -378,16 +281,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 8261544600556248522}
   Hexagon: {fileID: 0}
-  Circle: {fileID: 0}
+  Circle: {fileID: 8261544600556248522}
   Hexagon_Button: {fileID: 0}
   Square_Button: {fileID: 0}
   Circle_Button: {fileID: 0}
   movement: {fileID: 0}
   hexagon: {fileID: 0}
-  circle_movement: {fileID: 0}
+  circle_movement: {fileID: 7940258283680499624}
   difficulty: {fileID: 0}
   Hexagon_Difficulty: {fileID: 0}
-  circle_difficulty: {fileID: 0}
+  circle_difficulty: {fileID: 728469745093254605}
 --- !u!58 &8487146094319112568
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -498,8 +401,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60370aaa218d4044ba04a3871f376b59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x: 0
-  y: 0
+  x: 602.406
+  y: 19
   home: {fileID: 0}
 --- !u!114 &5735920960857570019
 MonoBehaviour:
@@ -513,12 +416,64 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ef91eb97e603af408004739313f6f45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointerspawnpoints: []
-  mediumpointerspawnpoints: []
-  hardpointerspawnpoints: []
-  insanepointerspawnpoints: []
+  pointerspawnpoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  mediumpointerspawnpoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  hardpointerspawnpoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  insanepointerspawnpoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   Easy_pointer: {fileID: 0}
   Medium_pointer: {fileID: 0}
   Hard_pointer: {fileID: 0}
   Insane_pointer: {fileID: 0}
-  circle_difficulty: {fileID: 728469745093254605}
+  difficulty: {fileID: 728469745093254605}

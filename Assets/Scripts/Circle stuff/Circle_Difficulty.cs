@@ -1,4 +1,4 @@
-using System.Collections;
+ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -38,7 +38,7 @@ public class Circle_Difficulty : MonoBehaviour
             insane = false;
             transform.position = new Vector3 (1.2f, -1.66f, 0f);
             transform.rotation = Quaternion.Euler(0f, 0f, 0f);
-            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+            rb.constraints = RigidbodyConstraints2D.None;
             Debug.Log("Easy Mode selected");
             Easy_Button.EasyClicked = false;
         }
@@ -49,8 +49,8 @@ public class Circle_Difficulty : MonoBehaviour
             insane = false;
             transform.position = new Vector3 (1.2f, 141.88f, 0f);
             transform.rotation = Quaternion.Euler(0f, 0f, 0f);
-            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             Debug.Log("Medium Mode selected");
+            rb.constraints = RigidbodyConstraints2D.None;
             Medium_Button.MediumClicked = false;
         }
         if(hard == true && Hard_Button.HardClicked == true)
@@ -60,7 +60,7 @@ public class Circle_Difficulty : MonoBehaviour
             insane = false;
             transform.position = new Vector3 (-197.57f, 141.88f, 0f);
             transform.rotation = Quaternion.Euler(0f, 0f, 0f);
-            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+            rb.constraints = RigidbodyConstraints2D.None;
             Debug.Log("Hard Mode selected");
             Hard_Button.HardClicked = false;
         }

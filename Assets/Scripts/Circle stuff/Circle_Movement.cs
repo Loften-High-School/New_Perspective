@@ -59,14 +59,14 @@ public class Circle_Movement : MonoBehaviour
      { 
       if ((Input.GetKeyDown(KeyCode.D))|(Input.GetKey(KeyCode.D)))
         {
-            rb.velocity = new Vector3(15 * force * horizontalMove, rb.velocity.y, 0);
-            rb.AddForce(Vector3.right * force * Time.deltaTime);
+            rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, 0);
+            rb.AddForce(Vector3.right * force * 15);
             Debug.Log("Key D has been pressed");
         }
       if ((Input.GetKeyDown(KeyCode.A))|(Input.GetKey(KeyCode.A)))
         {
-            rb.velocity = new Vector3(15 * force * horizontalMove, rb.velocity.y, 0);
-            rb.AddForce(Vector3.left * force * Time.deltaTime);
+            rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, 0);
+            rb.AddForce(Vector3.left * force * 15);
             Debug.Log("Key A has been pressed");
         }
       if (Input.GetKeyDown(KeyCode.Space))     
@@ -112,14 +112,14 @@ public class Circle_Movement : MonoBehaviour
         }  
       if ((Input.GetKeyDown(KeyCode.RightArrow))|(Input.GetKey(KeyCode.RightArrow))) 
         {
-            rb.velocity = new Vector3(15 * force * horizontalMove, rb.velocity.y, 0);
-            rb.AddForce(Vector3.right * force * Time.deltaTime);
+            rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, 0);
+            rb.AddForce(Vector3.right * force * 15);
             Debug.Log("Right Arrow Key has been pressed");
         }
       if ((Input.GetKeyDown(KeyCode.LeftArrow))|(Input.GetKey(KeyCode.LeftArrow)))    
         {
-            rb.velocity = new Vector3(15 * force * horizontalMove, rb.velocity.y, 0);
-            rb.AddForce(Vector3.left * force * Time.deltaTime);
+            rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, 0);
+            rb.AddForce(Vector3.left * force * 15);
             Debug.Log("Key Left Arrow has been pressed");
         }
      }

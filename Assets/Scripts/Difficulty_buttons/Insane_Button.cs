@@ -5,11 +5,11 @@ using UnityEngine;
 public class Insane_Button : MonoBehaviour
 {
 [SerializeField] public GameObject button;
-    public Camera difficulty;
     private Rigidbody2D rb;
     public bool InsaneClicked;
     public Difficulty Difficulty;
     public Hexagon_Difficulty DIFFICULTY;
+    public Circle_Difficulty difficulty;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +27,7 @@ public class Insane_Button : MonoBehaviour
         {
             Difficulty.insane = true;
             DIFFICULTY.insane = true;
+            difficulty.insane = true;
         }
     }
 }

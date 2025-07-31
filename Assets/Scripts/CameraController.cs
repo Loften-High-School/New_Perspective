@@ -54,6 +54,7 @@ public class CameraController : MonoBehaviour
         Lobby.enabled = true;
 
         EnableOnlyCamera(MenuCamera);
+        CircleCamera.enabled = false;
 
         ResetUIStates();
     }
@@ -159,27 +160,56 @@ public class CameraController : MonoBehaviour
     }
 
     void HandleHomeClicked()
-    {
+{
+    // Fully reset all pause and gameplay states BEFORE anything else
+    pause.paused = false;
+    Hexagon_Pause.paused = false;
+    circle_pause.paused = false;
+    resume.clicked = false;
+    Options_Pause.Clicked = false;
+    Options_Main.Clicked = false;
 
-        ResetUIStates();
-        Lobby.enabled = true;
-        EnableOnlyCamera(MenuCamera);
-        MenuCamera.enabled = true;
-        difficulty.easy = false;
-        difficulty.medium = false;
-        difficulty.hard = false;
-        difficulty.insane = false;
-        hexagonDifficulty.easy = false;
-        hexagonDifficulty.medium = false;
-        hexagonDifficulty.hard = false;
-        hexagonDifficulty.insane = false;
-        circle_difficulty.easy = false;
-        circle_difficulty.medium = false;
-        circle_difficulty.hard = false;
-        circle_difficulty.insane = false;
-        Debug.Log("Player has returned home");
-        EnableOnlyCamera(MenuCamera);
-    }
+    // Disable all cameras manually
+    MenuCamera.enabled = true;
+    PlayerCamera.enabled = false;
+    HexagonCamera.enabled = false;
+    CircleCamera.enabled = false;
+    DifficultyCamera.enabled = false;
+    GameOver_Camera.enabled = false;
+    Options_Camera.enabled = false;
+    Pause_Camera.enabled = false;
+    Controls_Camera.enabled = false;
+    Shape_Camera.enabled = false;
+
+    // Stop any gameplay music
+    Easy.Stop();
+    Medium.Stop();
+    Hard.Stop();
+    Insane.Stop();
+
+    // Enable lobby music
+    Lobby.enabled = true;
+
+    // Reset all UI and difficulty states
+    ResetUIStates();
+
+    difficulty.easy = false;
+    difficulty.medium = false;
+    difficulty.hard = false;
+    difficulty.insane = false;
+
+    hexagonDifficulty.easy = false;
+    hexagonDifficulty.medium = false;
+    hexagonDifficulty.hard = false;
+    hexagonDifficulty.insane = false;
+
+    circle_difficulty.easy = false;
+    circle_difficulty.medium = false;
+    circle_difficulty.hard = false;
+    circle_difficulty.insane = false;
+
+    Debug.Log("Player has returned home");
+}
 
     void HandleBackButtons()
     {

@@ -5,11 +5,11 @@ using UnityEngine;
 public class Easy_Button : MonoBehaviour
 {
 [SerializeField] public GameObject button;
-    public Camera difficulty;
     private Rigidbody2D rb;
     public bool EasyClicked;
     public Difficulty Difficulty;
     public Hexagon_Difficulty DIFFICULTY;
+    public Circle_Difficulty difficulty;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +27,7 @@ public class Easy_Button : MonoBehaviour
         {
             Difficulty.easy = true;
             DIFFICULTY.easy = true;
+            difficulty.easy = true;
         }
     }
 }
