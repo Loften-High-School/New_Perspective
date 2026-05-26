@@ -25,7 +25,7 @@ public class Double_Jump : MonoBehaviour
 
     void Jump()
     {
-        rb.velocity = new Vector3(rb.velocity.x, jumpForce, 0);
+        rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpForce, 0);
         jumpCount++;
     }
 
