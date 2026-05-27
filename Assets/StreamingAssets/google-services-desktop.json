@@ -1,0 +1,31 @@
+{
+  "project_info": {
+    "project_number": "546984347933",
+    "project_id": "new-perspective-9488a",
+    "storage_bucket": "new-perspective-9488a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:546984347933:ios:f2fae39b6d7e1b9c9079f4",
+        "android_client_info": {
+          "package_name": "com.OwenBarger.NewPerspective"
+        }
+      },
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBZc_Su8JZJRAiKnml5iiSycj8abclWOk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 0
+        },
+        "appinvite_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
