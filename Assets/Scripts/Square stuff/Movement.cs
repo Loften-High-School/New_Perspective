@@ -27,6 +27,7 @@ public class Movement : MonoBehaviour
     private Rigidbody2D rb;
 
     public Pause pause;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -162,22 +163,20 @@ public class Movement : MonoBehaviour
       //Checks if player colides with ground
       private void OnCollisionEnter2D(Collision2D collider)
       {
-        if (isGrounded == false)
-          {
-            Jump_sound.enabled = false;
-            if (collider.gameObject.CompareTag("Ground"))
-              {
-                isGrounded = true;
-                Debug.Log("Ground is detected");
-              }
+        isGrounded = true;
+        Debug.Log("Ground is detected");
         
-          }
-            if(collider.gameObject.CompareTag("DeathLine"))
-          {
-            Debug.Log("WOMP WOMP");
-            Destroy(gameObject);
-            gameOver.isAlive = false;
-          }
+        if(collider.gameObject.CompareTag("DeathLine"))
+        {
+          Debug.Log("WOMP WOMP");
+          Destroy(gameObject);
+          gameOver.isAlive = false;
+        }
         
       }
+
+      private void OnCollisionExit2D(Collision2D collider)
+    {
+        isGrounded = false;
+    }
 }

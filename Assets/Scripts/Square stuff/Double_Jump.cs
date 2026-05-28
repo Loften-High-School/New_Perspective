@@ -12,12 +12,12 @@ public class Double_Jump : MonoBehaviour
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D> ();
+        rb = GetComponent<Rigidbody2D>();
     }
     
     void Update()
     {
-        if((Input.GetKeyDown(KeyCode.Space)) | (Input.GetKeyDown(KeyCode.W)) | (Input.GetKeyDown(KeyCode.UpArrow)) && ((isGrounded == false) && (jumpCount < maxJumps)))
+        if((Input.GetKeyDown(KeyCode.Space)) || (Input.GetKeyDown(KeyCode.W)) || (Input.GetKeyDown(KeyCode.UpArrow)) && (isGrounded == false) && (jumpCount < maxJumps))
         {
             Jump();
         }
@@ -25,24 +25,22 @@ public class Double_Jump : MonoBehaviour
 
     void Jump()
     {
-        rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpForce, 0);
-        jumpCount++;
+        if(jumpCount == 1 && isGrounded == false)
+        {
+            rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpForce, 0);
+            jumpCount++;
+        }
     }
 
     void OnCollisionEnter2D (Collision2D collider)
     {
-        if (collider.gameObject.CompareTag("Ground"))
-        {
-            isGrounded = true;
-            jumpCount = 0;
-        }
+        isGrounded = true;
+        jumpCount = 0;
     }
 
     void OnCollisionExit2D (Collision2D collider)
     {
-        if (collider.gameObject.CompareTag("Ground"))
-        {
-            isGrounded = false;
-        }
+        isGrounded = false;
+        jumpCount = 1;
     }
 }
